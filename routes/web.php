@@ -15,5 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('transactions','TransactionsController');
+Route::resource('User','UserController');
 Route::resource('posts','PostController');
 Route::get('posts/{{$post->id}}','PostController@show');
