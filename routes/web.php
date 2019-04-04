@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::resource('transactions','TransactionsController');
 Route::resource('User','UserController');
 Route::resource('posts','PostController');
+Route::resource('failedTransactions','FailedTransactionController');
 Route::get('posts/{{$post->id}}','PostController@show');
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/transactions', 'HomeController@index')->name('home');

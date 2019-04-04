@@ -43,10 +43,10 @@ class UserController extends Controller
       else{
         //kaydedilecek ve login sayfasına gidilecek (ya da arada kaydedildi sayfası oluşturulabilir)
         $user= new User;
-        $user->name = Input::get('name');
-        $user->surname = Input::get('surname');
-        $user->password = Input::get('password');
-        $user->isParent = Input::get('isParent');
+        $user->name = $request->input('name');
+        $user->surname = $request->input('email');
+        $user->password = $request->input('password');
+        $user->isParent = $request->input('isParent');
         $user->save();
         return Redirect::to('login');
       }

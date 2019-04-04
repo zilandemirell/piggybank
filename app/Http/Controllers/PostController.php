@@ -51,7 +51,7 @@ class PostController extends Controller
     public function show($id)
     {
       $postSingular = posts::find($id);
-        return view('posts.singular')->with('postSingular',$postSingular);
+        return view('posts.index')->with('postSingular',$postSingular);
     }
 
     /**
