@@ -105,7 +105,7 @@
             <div class="col">
                 <div class="counter">
                     <i class="fa fa-2x">Your Balance:</i>
-                    <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
+                    <h2 class="timer count-title count-number" data-to={{$total}} data-speed="1500"></h2>
                 </div>
                 
             </div>
