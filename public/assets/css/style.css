@@ -293,6 +293,7 @@ ul.topnav .dropdown-menu li > a {
 .navbar .nav .primary > a:focus {
 	background-color: #fddde6;
 	color:rgb(240, 25, 25);
+
 }
 
 .navbar .nav .warning > a,
@@ -319,7 +320,9 @@ ul.topnav .dropdown-menu li > a {
 .navbar .nav .success > a,
 .navbar .nav .success > a:hover,
 .navbar .nav .success > a:focus {
+
 	background-color: #ce87eb;
+
 	color:#fff;
 }
 

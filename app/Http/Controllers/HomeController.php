@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+use App\User;
+
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+      $user = User::where('name','hozan')->get();
+        return view('home')->with('user',$user);
+
     }
 }
