@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" xmlns="">
   <head>
-    <!-- styles -->
+
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="assets/js/jquerycounter.js"></script>
+
+      <!-- styles -->
+
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300|Open+Sans:400,300,300italic,400italic" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets\color\success.css" rel="stylesheet">
+
+    <link href="assets/color/success.css" rel="stylesheet">
+    <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
+
 
     <!-- fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
@@ -20,6 +30,7 @@
   </head>
   <body>
     @include('layouts.navbar')
+
   <div class="container">
       @yield('content')
   </div>

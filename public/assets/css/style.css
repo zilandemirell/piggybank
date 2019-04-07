@@ -291,8 +291,9 @@ ul.topnav .dropdown-menu li > a {
 .navbar .nav .primary > a,
 .navbar .nav .primary > a:hover,
 .navbar .nav .primary > a:focus {
-	background-color: #009cea;
-	color:#fff;
+	background-color: #fddde6;
+	color:rgb(240, 25, 25);
+
 }
 
 .navbar .nav .warning > a,
@@ -305,7 +306,7 @@ ul.topnav .dropdown-menu li > a {
 .navbar .nav .danger > a,
 .navbar .nav .danger > a:hover,
 .navbar .nav .danger > a:focus {
-	background-color: #ec4f13;
+	background-color: #fff;
 	color:#fff;
 }
 
@@ -319,7 +320,9 @@ ul.topnav .dropdown-menu li > a {
 .navbar .nav .success > a,
 .navbar .nav .success > a:hover,
 .navbar .nav .success > a:focus {
-	background-color: #7cbb00;
+
+	background-color: #ce87eb;
+
 	color:#fff;
 }
 

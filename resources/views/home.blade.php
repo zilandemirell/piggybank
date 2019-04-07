@@ -1,11 +1,20 @@
 @extends('layouts.app')
 
+
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <link href="assets/css/counter.css" rel="stylesheet">
-<style>.intro1>#intro {
+
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<style>
+.intro1>#intro {
         width: 100%;
-        height: 60vh;
+        height: 40vh;
         position: relative;
-        background: url(../img/intro-background.jpg) top center;
+        
         background-size: cover;
     }
 
@@ -16,7 +25,9 @@
     }
 
     .intro1 > #intro .intro-content  {
-        background: rgba(0, 0, 0, 0.65);
+
+        background: rgb(253,221,230);
+
         position: absolute;
         position: absolute;
         bottom: 0;
@@ -72,35 +83,42 @@
         color: #fff;
         background: #57a825;
         text-decoration: none;
-    }</style>
+ 
+    }
+    .counter {
+    background-color:#fff;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+    </style>
+
 @section('content')
     <div class="intro1">
         <section id="intro">
-        <div class="intro-content">
-                <h2>Welcome to Remember!</h2>
-                <h3>Lorem ipsum dolor sit amet, elit persecuti efficiendi</h3>
-                <div>
-                    <a href="" class="btn-get-started scrollto">Get Started</a>
+            <div class="intro-content">
+                <h2>Welcome to Smart Piggy Bank!</h2>
+                <h3>You can see your total balance in the counter and go to transaction details and failed transactions from the menu </h3>
+            </div>
+    </div>
+</section>
+
+    <div class="container" align="center">
+        <div class="row">
+            <br/>
+        </div>
+        <div class="row text-center">
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-2x">Your Balance:</i>
+                    <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
+
                 </div>
+                
             </div>
         </section>
     </div>
-        <div class="container" align="center">
-            <div class="row">
-                <br/>
-                <div class="col text-center">
-                    <h2>YOUR TOTAL BALANCE</h2>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col">
-                    <div class="counter">
-                        <i class="fa fa-code fa-2x"></i>
 
-                        <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
 
-                    </div>
-                </div>
-            </div>
-        </div>
+       
+
 @endsection
