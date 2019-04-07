@@ -1,3 +1,4 @@
+
 <style>
   .navbar .nav .primary > a,
 .navbar .nav .primary > a:hover,
@@ -34,30 +35,37 @@
 	color:#fff;
 }
 </style>
+
 <header>
 <div class="navbar">
      <div class="navbar-inner">
        <div class="container">
          <!-- logo -->
-         <a class="brand logo" href="index.html">
-         <img src="assets/img/logo.png" alt="" />
+
+         <a class="brand logo" href="./">
+     <img width="230" src="assets/img/piggy.jpeg" alt="" />
      </a>
          <!-- end logo -->
          <!-- top menu -->
          <div>
            <nav>
              <ul class="nav topnav">
-               <li class="success">
-                 <a href="/smartpiggybank/public"><i class="icon-home icon-white"></i>Home</a>
+
+               <li class="dropdown success">
+                 <a href="./"><i class="icon-home icon-white"></i>Home</a>
                </li>
                <li class="dropdown primary">
-                 <a href="/smartpiggybank/public/transactions"><i class="icon-star icon-white"></i>Transaction Details</a>
+                 <a href="./transactions"><i class="icon-star icon-white"></i>Transaction Details</a>
                </li>
                <li class="dropdown danger">
-                 <a href="/smartpiggybank/public/failedTransactions"><i class="icon-minus-sign icon-white"></i>Failed Transactions</a>
+
+
+                 <a href="./failedTransactions"><i class="icon-minus-sign icon-white"></i>Failed Transactions</a>
+
                </li>
                <li class="warning">
                  <a href="contact.html"><i class="icon-user icon-white"></i>Profile</a>
+
                </li>
              </ul>
            </nav>
@@ -66,4 +74,5 @@
        </div>
      </div>
    </div>
-  </header>
+
+</header>

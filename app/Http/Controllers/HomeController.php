@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\transaction;
-use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\DB;
+use App\User;
+
+
 class HomeController extends Controller
 {
     /**
@@ -23,10 +26,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {   //user id part will be replaced with the current user
-        $user_id = Auth::user()->id;
-        
-        $totalBalance= transaction::where('user_id',$user_id)->sum('balance');
-        return view('home')->with('total',$totalBalance);
+
+    {
+
+      $user = User::where('name','hozan')->get();
+        return view('home')->with('user',$user);
+
     }
 }
