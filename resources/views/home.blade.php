@@ -4,7 +4,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
+<link href="assets/css/counter.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 <style>
@@ -80,6 +80,11 @@
         background: #57a825;
         text-decoration: none;
     }
+    .counter {
+    background-color:#fff;
+    padding: 20px 0;
+    border-radius: 5px;
+}
     </style>
 
 @section('content')
@@ -99,10 +104,8 @@
         <div class="row text-center">
             <div class="col">
                 <div class="counter">
-                    <i class="fa fa-code fa-2x"></i>
-
+                    <i class="fa fa-2x">Your Balance:</i>
                     <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
-
                 </div>
                 
             </div>

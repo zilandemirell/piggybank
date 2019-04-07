@@ -15,7 +15,6 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/color/success.css" rel="stylesheet">
     <link href="assets/css/prettyPhoto.css" rel="stylesheet" />
-    <link href="assets/css/counter.css" rel="stylesheet">
 
     <!-- fav and touch icons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
