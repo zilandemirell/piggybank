@@ -2,6 +2,7 @@
 
 
 
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -24,7 +25,9 @@
     }
 
     .intro1 > #intro .intro-content  {
+
         background: rgb(253,221,230);
+
         position: absolute;
         position: absolute;
         bottom: 0;
@@ -80,6 +83,7 @@
         color: #fff;
         background: #57a825;
         text-decoration: none;
+ 
     }
     .counter {
     background-color:#fff;
@@ -107,11 +111,13 @@
                 <div class="counter">
                     <i class="fa fa-2x">Your Balance:</i>
                     <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
+
                 </div>
                 
             </div>
-        </div>
+        </section>
     </div>
+
 
        
 
