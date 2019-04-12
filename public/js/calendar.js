@@ -25,12 +25,16 @@
         "footer":"At Paisley Park",
     }
 ];
-$(document).ready(function () {
+
+    $(document).ready(function () {
     $("#my-calendar").zabuto_calendar({
         data: eventData,
 
         action: function () {
-            return console.log(this.id);
-        },
+            var a = (this.id);
+            parts = a.split('_');
+            datei = parts.pop();
+            return console.log(datei);
+            },
     });
 });

@@ -10,4 +10,16 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function turninto($array,$key){
+
+        for ($i=0; $i<sizeof($array); $i++){
+            $sonuc[]=$array[$i][$key];
+        }
+
+        return ($sonuc);
+    }
+
+
+
 }

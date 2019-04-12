@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\transaction;
+use App\User;
 use Illuminate\Http\Request;
 
 class TransactionsController extends Controller
@@ -13,8 +15,10 @@ class TransactionsController extends Controller
      */
     public function index()
     {
-
-        return view('transactions.index');
+        $names = User::select('name')->get();
+        $infos = transaction::all()->groupBy('user_id');
+        $turn_names = $this->turninto($names,"name");
+        return view(('transactions.index'))->with('user_names', $turn_names)->with('all', $infos);
     }
 
     /**
@@ -82,4 +86,28 @@ class TransactionsController extends Controller
     {
         //
     }
+    public function allTransactions(){
+       // transaction = $transaction::where('name','=',$a)->
+       /* $tr = transaction::whereHas('User', function($q)
+        {
+            $q->where('id','=','1');
+        })->get();
+        ;*/
+        $infos = transaction::all()->groupBy(['user_id','date']);
+        $tt = transaction::where('date',"=","2019-04-12")->get();
+
+        return ($infos);
+
+       /* $transaction = transaction::whereHas('user_id', function($q) use ($id)
+        {
+            $q->where('id', $user_id);
+        })->where('status', $datei)
+            ->take($count)
+            ->skip($skip)
+            ->get();
+*/
+    }
+
+
+
 }

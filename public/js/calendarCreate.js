@@ -23,7 +23,7 @@ $.fn.zabuto_calendar = function (options) {
 
     this.each(function () {
         var $calendarElement = $(this);
-        $calendarElement.attr('id', "zabuto_calendar_" + Math.floor(Math.random() * 99999).toString(36));
+        $calendarElement.attr('id', Math.floor(Math.random() * 99999).toString(36));
 
         $calendarElement.data('initYear', opts.year);
         $calendarElement.data('initMonth', opts.month);

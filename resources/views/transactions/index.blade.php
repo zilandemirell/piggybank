@@ -9,19 +9,25 @@
 
 
 @section('content')
+    <div id='Transactions'>
 <div class="mainContainer row-fluid">
     <div class="transactionTab span6">
-
         <h4>Transaction Records</h4>
 
+
+
         <ul class="nav nav-tabs">
-            <li class="active"><a href="#one" data-toggle="tab"><i class="icon-briefcase"></i> Mehmet</a></li>
-            <li><a href="#two" data-toggle="tab"> İrem </a></li>
-            <li><a href="#three" data-toggle="tab"> Zilan </a></li>
+         <!--  <li class="active"><a href="#1" data-toggle="tab"><i class="icon-briefcase"></i> @php echo $user_names[0];@endphp</a></li>
+            -->
+            @php for ($i=0; $i<sizeof($user_names); $i++) : @endphp
+            <li><a href="#@php echo $i; @endphp" data-toggle="tab"> <?php echo $user_names[$i]; ?>  </a></li>
+            @php endfor; @endphp
         </ul>
+
         <div class="tab-content">
-            <div class="tab-pane active" id="one">
-
+            @php for ($i=0; $i<sizeof($all); $i++) : @endphp
+            <div id="mytable"></div>
+            <div class="tab-pane" id="@php echo $i;@endphp">
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -30,87 +36,27 @@
                         <th> Evidence </th>
                     </tr>
                     </thead>
+                    @php for($j=0; $j<sizeof($all[$i+1]);$j++):@endphp
+
                     <tbody>
                     <tr>
-                        <td>01:00</td>
-                        <td>25</td>
+                        <td>@php echo $all[$i+1][$j]["hour"]@endphp</td>
+                        <td>@php echo $all[$i+1][$j]["balance"]@endphp</td>
                         <td><a>Image Link</a>  </td>
                     </tr>
-                    <tr>
-                        <td>02:00</td>
-                        <td>64</td>
-                        <td><a>Image Link</a>  </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>45</td>
-                        <td><a>Image Link</a>  </td>
-                    </tr>
+                    @php endfor; @endphp
                     </tbody>
+
                 </table>
 
+            </div>
+            @php endfor; @endphp
 
-            </div>
-            <div class="tab-pane" id="two">
-                <p>
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th> Hour </th>
-                        <th> Money Thrown</th>
-                        <th> Evidence </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                    </tr>
-                    </tbody>
-                </table>                </p>
-            </div>
-            <div class="tab-pane" id="three">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th> Hour </th>
-                        <th> Money Thrown</th>
-                        <th> Evidence </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+
         </div>
 
     </div>
+
 
 
 
@@ -127,7 +73,11 @@
 
 
 </div>
-
+    </div>
 
 @endsection
 <script src="js/calendar.js"></script>
+        <script>
+            document.getElementById('mytable').innerHTML = myTable;
+
+        </script>

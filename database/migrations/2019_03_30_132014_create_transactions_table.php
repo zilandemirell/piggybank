@@ -17,10 +17,12 @@ class CreateTransactionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->DateTime('date');
+            $table->Date('date');
             $table->double('balance');
             //$table->boolean('isFailed');
-            $table->timestamps();
+            $table->time('hour');
+            $table->timestamp('created_at')->nullable();
+
         });
 
     }
