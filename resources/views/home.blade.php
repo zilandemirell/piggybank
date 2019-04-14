@@ -90,6 +90,28 @@
     padding: 20px 0;
     border-radius: 5px;
 }
+.col_half { width: 49%; }
+  .col_third { width: 32%; }
+  .col_fourth { width: 23.5%; }
+  .col_fifth { width: 18.4%; }
+  .col_sixth { width: 15%; }
+  .col_three_fourth { width: 74.5%;}
+  .col_twothird{ width: 66%;}
+  .col_half,
+  .col_third,
+  .col_twothird,
+  .col_fourth,
+  .col_three_fourth,
+  .col_fifth{
+      position: relative;
+      display:inline;
+      display: inline-block;
+      float: left;
+      margin-right: 2%;
+      margin-bottom: 20px;
+  }
+  .end { margin-right: 0 !important; }
+  /* Column Grids End */
     </style>
 
 @section('content')
@@ -99,27 +121,21 @@
                 <h2>Welcome to Smart Piggy Bank!</h2>
                 <h3>You can see your total balance in the counter and go to transaction details and failed transactions from the menu </h3>
             </div>
-    </div>
-</section>
-
-    <div class="container" align="center">
-        <div class="row">
-            <br/>
-        </div>
-        <div class="row text-center">
-            <div class="col">
-                <div class="counter">
-                    <i class="fa fa-2x">Your Balance:</i>
-
-                    <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
-
-                </div>
-                
-            </div>
         </section>
     </div>
+    
+    @foreach ($userBalance as $userName => $totalBalance)
 
-
-       
-
+            
+    <div class="counter col_fourth">
+        <div align="center"><i class="fa fa-2x">{{$userName}}</i></div>
+        
+        <h2 class="timer count-title count-number" data-to="{{$totalBalance}}" data-speed="900"></h2>
+    </div>
+                
+                
+    
+    @endforeach 
+ 
+   
 @endsection
