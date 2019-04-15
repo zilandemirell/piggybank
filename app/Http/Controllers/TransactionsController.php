@@ -13,11 +13,26 @@ class TransactionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function storeValue(Request $request)
+    {
+        $this->date = session([ 'value' => $request->value]);
+        $this->index();
+    }
+
     public function index()
     {
-        $names = User::select('name','id')->get();
-        $infos = transaction::all()->groupBy('user_id');
-        $turn_names = $this->turninto($names,"name","id");
+
+        $names = User::select('name', 'id')->get();
+
+        $turn_names = $this->turninto($names, "name", "id");
+
+        if (isset ($this->date)) {
+            $datei = $this->date;
+            $infos = transaction::all()->where("date", "=", $datei)->groupBy('user_id');
+        }else{
+            $infos = transaction::all()->groupBy('user_id');
+        }
+
         return view(('transactions.index'))->with('user_names', $turn_names)->with('all', $infos);
     }
 
@@ -85,27 +100,6 @@ class TransactionsController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function allTransactions(){
-       // transaction = $transaction::where('name','=',$a)->
-       /* $tr = transaction::whereHas('User', function($q)
-        {
-            $q->where('id','=','1');
-        })->get();
-        ;*/
-        $infos = transaction::all()->groupBy(['user_id','date']);
-        $tt = transaction::where('date',"=","2019-04-12")->get();
-
-        return ($infos);
-
-       /* $transaction = transaction::whereHas('user_id', function($q) use ($id)
-        {
-            $q->where('id', $user_id);
-        })->where('status', $datei)
-            ->take($count)
-            ->skip($skip)
-            ->get();
-*/
     }
 
 

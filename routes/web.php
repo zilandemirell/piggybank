@@ -29,3 +29,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/','TransactionsController@index');
+Route::post('session/dateValue', 'TransactionsController@storeValue');

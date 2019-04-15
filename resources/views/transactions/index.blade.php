@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -19,7 +20,7 @@
         <ul class="nav nav-tabs">
          <!--  <li class="active"><a href="#1" data-toggle="tab"><i class="icon-briefcase"></i> @php echo $user_names[1];@endphp</a></li>
             -->
-            @for ($i=1; $i<=sizeof($all); $i++)
+            @for ($i=1; $i<=sizeof($user_names); $i++)
              <li><a href="#{{$i}}" data-toggle="tab">{{$user_names[$i]}}</a></li>
                 @endfor
         </ul>

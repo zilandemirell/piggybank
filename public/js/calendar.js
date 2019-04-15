@@ -33,8 +33,25 @@
         action: function () {
             var a = (this.id);
             parts = a.split('_');
-            datei = parts.pop();
-            return console.log(datei);
-            },
+            value = parts.pop();
+            var data = {"value" : value};
+            $.ajax({
+                type: "POST",
+                url: 'session/dateValue',
+                data: data,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function () {
+                    console.log(value);
+                }
+
+            });
+
+        }
+
+
     });
+
 });
+
