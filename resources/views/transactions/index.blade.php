@@ -17,17 +17,18 @@
 
 
         <ul class="nav nav-tabs">
-         <!--  <li class="active"><a href="#1" data-toggle="tab"><i class="icon-briefcase"></i> @php echo $user_names[0];@endphp</a></li>
+         <!--  <li class="active"><a href="#1" data-toggle="tab"><i class="icon-briefcase"></i> @php echo $user_names[1];@endphp</a></li>
             -->
-            @php for ($i=0; $i<sizeof($user_names); $i++) : @endphp
-            <li><a href="#@php echo $i; @endphp" data-toggle="tab"> <?php echo $user_names[$i]; ?>  </a></li>
-            @php endfor; @endphp
+            @for ($i=1; $i<=sizeof($all); $i++)
+             <li><a href="#{{$i}}" data-toggle="tab">{{$user_names[$i]}}</a></li>
+                @endfor
         </ul>
 
         <div class="tab-content">
-            @php for ($i=0; $i<sizeof($all); $i++) : @endphp
             <div id="mytable"></div>
-            <div class="tab-pane" id="@php echo $i;@endphp">
+            @for ($i=1; $i<=sizeof($all); $i++)
+
+            <div class="tab-pane" id="{{$i}}">
                 <table class="table table-striped">
                     <thead>
                     <tr>
@@ -36,21 +37,21 @@
                         <th> Evidence </th>
                     </tr>
                     </thead>
-                    @php for($j=0; $j<sizeof($all[$i+1]);$j++):@endphp
+                    @for($j=0; $j<sizeof($all[$i]);$j++)
 
                     <tbody>
                     <tr>
-                        <td>@php echo $all[$i+1][$j]["hour"]@endphp</td>
-                        <td>@php echo $all[$i+1][$j]["balance"]@endphp</td>
-                        <td><a>Image Link</a>  </td>
+                        <td>{{$all[$i][$j]["hour"]}}</td>
+                        <td>{{$all[$i][$j]["balance"]}}</td>
+                        <td><a href="#" class="button-to-click">Image Link</a>  </td>
                     </tr>
-                    @php endfor; @endphp
+                    @endfor
                     </tbody>
 
                 </table>
 
             </div>
-            @php endfor; @endphp
+            @endfor
 
 
         </div>
@@ -69,15 +70,49 @@
         </div>
     </div>
 
-
-
-
 </div>
     </div>
+<div class="popup">
+    Transaction css not binding for popup??
+</div>
+
 
 @endsection
+
+<div class="popup-container" style="display: none; position: fixed; z-index: 999"; >
+<img src="assets/img/piggy.jpeg">
+    <a class="popup-close" href="#">Close</a></div>
+
+
+
 <script src="js/calendar.js"></script>
+
         <script>
             document.getElementById('mytable').innerHTML = myTable;
-
         </script>
+
+
+<script>
+    $(document).ready(function() {
+        // config
+        popup = $('.popup-container');
+        clickme = $('.button-to-click');
+
+        // pop-up
+        vh = $(window).height();
+        vw = $(window).width();
+        bw = popup.width();
+        bh = popup.height();
+        clickme.click(function(e) {
+            e.preventDefault();
+            popup.fadeOut();
+            popup.css('left', vw/2 - bw/2);
+            popup.css('top', vh/2 - bh/2);
+            popup.fadeIn();
+        });
+        //close button
+        $('.popup-close').click(function() {
+            $('.popup-container').fadeOut();
+        });
+    });
+</script>

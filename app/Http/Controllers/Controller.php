@@ -11,10 +11,22 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function turninto($array,$key){
+   public function arrayfk($keyArray, $valueArray) {
+        if(is_array($keyArray)) {
+            foreach($keyArray as $key => $value) {
+                $filledArray[$value] = $valueArray[$key];
+            }
+        }
+        return $filledArray;
+    }
+
+    public function turninto($array,$value,$setkey){
 
         for ($i=0; $i<sizeof($array); $i++){
-            $sonuc[]=$array[$i][$key];
+            $keys[] = $array[$i][$setkey];
+            $deger[]=$array[$i][$value];
+            $sonuc = $this->arrayfk($keys,$deger);
+
         }
 
         return ($sonuc);

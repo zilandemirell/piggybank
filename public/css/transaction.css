@@ -176,7 +176,10 @@ div.zabuto_calendar div.legend span.badge {
 }
 
 
-
+div.popup{
+    position: fixed;
+    display: none;
+}
 .transactionTab > .nav-tabs > li > a {
     border: 1px solid transparent;
     -webkit-border-radius: 0;
@@ -193,4 +196,6 @@ div.zabuto_calendar div.legend span.badge {
     border-bottom-color: transparent;
     cursor: default;
     color : #6cb2eb;
+
 }
+

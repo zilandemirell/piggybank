@@ -15,9 +15,9 @@ class TransactionsController extends Controller
      */
     public function index()
     {
-        $names = User::select('name')->get();
+        $names = User::select('name','id')->get();
         $infos = transaction::all()->groupBy('user_id');
-        $turn_names = $this->turninto($names,"name");
+        $turn_names = $this->turninto($names,"name","id");
         return view(('transactions.index'))->with('user_names', $turn_names)->with('all', $infos);
     }
 
