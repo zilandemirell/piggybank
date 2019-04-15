@@ -74,7 +74,7 @@
 </div>
     </div>
 <div class="popup">
-    Transaction css not binding for popup??
+    ??Transaction css not binding for popup??
 </div>
 
 
