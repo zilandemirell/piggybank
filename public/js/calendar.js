@@ -34,7 +34,7 @@
             var a = (this.id);
             parts = a.split('_');
             value = parts.pop();
-            var data = {"value" : value};
+            var data = {"date" : value};
             $.ajax({
                 type: "POST",
                 url: 'session/dateValue',
@@ -42,8 +42,20 @@
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function () {
-                    console.log(value);
+                success: function (data) {
+                    console.log("başarılı", value);
+                    console.log(data);
+                    //console.log("response", response);
+                    if(data.success == true){
+                    $('#temp').html(data.html)
+                    $;
+                }
+                    else{
+                        alert('No Transactions');
+                    }
+                },
+                error: function() {
+                    alert('No Transactions');
                 }
 
             });

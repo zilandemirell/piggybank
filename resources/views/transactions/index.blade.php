@@ -11,90 +11,87 @@
 
 @section('content')
     <div id='Transactions'>
-<div class="mainContainer row-fluid">
-    <div class="transactionTab span6">
-        <h4>Transaction Records</h4>
+        <div class="mainContainer row-fluid">
+            <div class="transactionTab span6">
+            <div class="table" id="temp">
+
+            <h4>Transaction Records</h4>
 
 
-
-        <ul class="nav nav-tabs">
-         <!--  <li class="active"><a href="#1" data-toggle="tab"><i class="icon-briefcase"></i> @php echo $user_names[1];@endphp</a></li>
+                <ul class="nav nav-tabs">
+                <!--  <li class="active"><a href="#1" data-toggle="tab"><i class="icon-briefcase"></i> @php echo $user_names[1];@endphp</a></li>
             -->
-            @for ($i=1; $i<=sizeof($user_names); $i++)
-             <li><a href="#{{$i}}" data-toggle="tab">{{$user_names[$i]}}</a></li>
-                @endfor
-        </ul>
+                    @foreach ($user_names as $users)
+                        <li><a href="#{{$users->id}}" data-toggle="tab">{{$users->name}}</a></li>
+                    @endforeach
+                </ul>
 
-        <div class="tab-content">
-            <div id="mytable"></div>
-            @for ($i=1; $i<=sizeof($all); $i++)
+                <div class="tab-content">
 
-            <div class="tab-pane" id="{{$i}}">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th> Hour </th>
-                        <th> Money Thrown</th>
-                        <th> Evidence </th>
-                    </tr>
-                    </thead>
-                    @for($j=0; $j<sizeof($all[$i]);$j++)
+                    <div id="mytable"></div>
+                    @foreach ($user_names as $users)
 
-                    <tbody>
-                    <tr>
-                        <td>{{$all[$i][$j]["hour"]}}</td>
-                        <td>{{$all[$i][$j]["balance"]}}</td>
-                        <td><a href="#" class="button-to-click">Image Link</a>  </td>
-                    </tr>
-                    @endfor
-                    </tbody>
+                        <div class="tab-pane" id="{{$users->id}}">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th> Hour</th>
+                                    <th> Money Thrown</th>
+                                    <th> Evidence</th>
+                                </tr>
+                                </thead>
+                                @foreach($all[$users->id] as $transaction)
 
-                </table>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{$transaction->hour}}</td>
+                                        <td>{{$transaction->balance}}</td>
+                                        <td><a href="#" class="button-to-click">Image Link</a></td>
+                                    </tr>
+                                    @endforeach
+                                    </tbody>
 
-            </div>
-            @endfor
+                            </table>
 
-
-        </div>
-
-    </div>
+                        </div>
+                    @endforeach
 
 
-
-
-    <div class="container span6">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div id="my-calendar"></div>
+                </div>
 
             </div>
+
+            </div>
+            <div class="container span6">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div id="my-calendar"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-container">
+                <img src="assets/img/piggy.jpeg">
+                <a class="popup-close" href="#">Close</a>
+            </div>
         </div>
     </div>
-
-</div>
-    </div>
-<div class="popup">
-    ??Transaction css not binding for popup??
-</div>
 
 
 @endsection
 
-<div class="popup-container" style="display: none; position: fixed; z-index: 999"; >
-<img src="assets/img/piggy.jpeg">
-    <a class="popup-close" href="#">Close</a></div>
+
 
 
 
 <script src="js/calendar.js"></script>
 
-        <script>
-            document.getElementById('mytable').innerHTML = myTable;
-        </script>
+
 
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         // config
         popup = $('.popup-container');
         clickme = $('.button-to-click');
@@ -104,15 +101,15 @@
         vw = $(window).width();
         bw = popup.width();
         bh = popup.height();
-        clickme.click(function(e) {
+        clickme.click(function (e) {
             e.preventDefault();
             popup.fadeOut();
-            popup.css('left', vw/2 - bw/2);
-            popup.css('top', vh/2 - bh/2);
+            popup.css('left', vw / 2 - bw / 2);
+            popup.css('top', vh / 2 - bh / 2);
             popup.fadeIn();
         });
         //close button
-        $('.popup-close').click(function() {
+        $('.popup-close').click(function () {
             $('.popup-container').fadeOut();
         });
     });

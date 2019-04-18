@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\transaction;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TransactionsController extends Controller
@@ -15,8 +16,16 @@ class TransactionsController extends Controller
      */
     public function storeValue(Request $request)
     {
-        $this->date = session([ 'value' => $request->value]);
-        $this->index();
+        //$this->date = session([ 'value' => $request->value]);
+        //$this->index();
+        //$datei = new Carbon($request->date,'Europe/London');
+        $date_select = $request ->date;
+        //$datei=Carbon::createFromFormat('Y/m/d',$request->date);
+        $names = User::select('name', 'id')->get();
+        $infos = transaction::all()->where("date", "=", $date_select)->groupBy('user_id');
+        $returnHTML = view('transactions.index')->with('user_names',$names)->with('all', $infos)->renderSections('content');
+
+        return response()->json(['success' => true, 'html'=>$returnHTML]);
     }
 
     public function index()
@@ -24,7 +33,7 @@ class TransactionsController extends Controller
 
         $names = User::select('name', 'id')->get();
 
-        $turn_names = $this->turninto($names, "name", "id");
+        //$turn_names = $this->turninto($names, "name", "id");
 
         if (isset ($this->date)) {
             $datei = $this->date;
@@ -33,7 +42,7 @@ class TransactionsController extends Controller
             $infos = transaction::all()->groupBy('user_id');
         }
 
-        return view(('transactions.index'))->with('user_names', $turn_names)->with('all', $infos);
+        return view(('transactions.index'))->with('user_names', $names)->with('all', $infos);
     }
 
     /**

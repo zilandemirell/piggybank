@@ -14,10 +14,10 @@ class Controller extends BaseController
    public function arrayfk($keyArray, $valueArray) {
         if(is_array($keyArray)) {
             foreach($keyArray as $key => $value) {
-                $filledArray[$value] = $valueArray[$key];
+                $newArray[$value] = $valueArray[$key];
             }
         }
-        return $filledArray;
+        return $newArray;
     }
 
     public function turninto($array,$value,$setkey){
