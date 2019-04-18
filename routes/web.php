@@ -34,3 +34,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/','TransactionsController@storevalue');
 Route::post('session/dateValue', 'TransactionsController@storeValue');
 Route::post('session/dateCValue', 'TransactionChildController@storeValue');
+Route::post('session/dateFValue', 'FailedTransactionController@storeValue');

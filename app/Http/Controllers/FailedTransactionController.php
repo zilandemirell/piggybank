@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\transaction;
+use App\User;
 class FailedTransactionController extends Controller
 {
     /**
@@ -11,10 +13,33 @@ class FailedTransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function storeValue(Request $request)
+    {
+        //$this->date = session([ 'value' => $request->value]);
+        //$this->index();
+        //$datei = new Carbon($request->date,'Europe/London');
+        $date_select = $request->date;
+        //$datei=Carbon::createFromFormat('Y/m/d',$request->date);
+        $names = User::select('name', 'id')->get();
+        $infos = transaction::all()->where('isFailed','=','1')->where("date", "=", $date_select)->groupBy('user_id');
+
+        $returnHTML = view('failedTransactions.index')->with('user_names', $names)->with('all', $infos)->renderSections('content');
+        return response()->json(['success' => true, 'html' => $returnHTML]);
+    }
+
     public function index()
     {
-        return view('failedTransactions.index');
+        $names = User::select('name', 'id')->get();
+
+        //$turn_names = $this->turninto($names, "name", "id");
+
+
+            $infos = transaction::all()->where('isFailed','=','1')->groupBy('user_id');
+
+
+        return view(('failedTransactions.index'))->with('user_names', $names)->with('all', $infos);
     }
+
 
     /**
      * Show the form for creating a new resource.

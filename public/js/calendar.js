@@ -53,12 +53,14 @@ $(document).ready(function () {
                     }
                     else{
                         alert('No Transactions');
+                        console.log(data);
 
                     }
                 },
                 error: function() {
                     alert('No Transactions');
                     console.log(page_url);
+                    console.log(data);
 
                 }
 
