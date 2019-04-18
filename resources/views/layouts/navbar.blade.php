@@ -24,7 +24,7 @@
 .navbar .nav .info > a,
 .navbar .nav .info > a:hover,
 .navbar .nav .info > a:focus {
-	background-color: #ddfdf4;
+	background-color: #95e3f9;
 	color:#fff;
 }
 
@@ -58,11 +58,12 @@
                  <a href="./transactions"><i class="icon-star icon-white"></i>Transaction Details</a>
                </li>
                <li class="dropdown danger">
-
-
                  <a href="./failedTransactions"><i class="icon-minus-sign icon-white"></i>Failed Transactions</a>
-
                </li>
+              </li>
+              <li class="dropdown info">
+                <a href="./makeTransaction"><i class="icon-plus-sign icon-white"></i>New Transaction</a>
+              </li>
                <li class="warning">
                  <a href="contact.html"><i class="icon-user icon-white"></i>Profile</a>
 

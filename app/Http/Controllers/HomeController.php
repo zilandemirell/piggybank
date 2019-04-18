@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Arr;
 use App\User;
+use App\transaction;
 
 
 class HomeController extends Controller
@@ -27,9 +30,20 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //$loggedUser= Auth::user()->id;
+        //$isParent=Auth::user()->isParent;
+        $users = User::all();
+        $userBalance=[];
+        $count=0;
+        foreach ($users as $user) {
 
-      $user = User::where('name','hozan')->get();
-        return view('home')->with('user',$user);
+           $totalBalance = transaction::where('user_id', $user->id) -> sum('balance');
+            $userName = $user->name;
+          $userBalance[$userName] = $totalBalance; 
+           $count = $count +1;
+        }
+     
+        return view('home')->with('userBalance', $userBalance);
 
     }
 }

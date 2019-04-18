@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" align="center">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -62,10 +62,21 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="isParent" class="col-md-4 col-form-label text-md-right">{{ __('parent') }}</label>
+                            <label for="parent" class="col-md-4 col-form-label text-md-right">{{ __('Parent') }}</label>
 
                             <div class="col-md-6">
-                                <input id="isParent" type="text" class="form-control{{ $errors->has('isParent') ? ' is-invalid' : '' }}" name="isParent" value="{{ old('isParent') }}" required autofocus>
+                                <input id="isParent" type="radio" class="form-control{{ $errors->has('isParent') ? ' is-invalid' : '' }}" name="isParent" value=1>
+
+                                @if ($errors->has('isParent'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('isParent') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <label for="child" class="col-md-4 col-form-label text-md-right">{{ __('Child') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="isParent" type="radio" class="form-control{{ $errors->has('isParent') ? ' is-invalid' : '' }}" name="isParent" value=0>
 
                                 @if ($errors->has('isParent'))
                                     <span class="invalid-feedback" role="alert">
