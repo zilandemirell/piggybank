@@ -84,11 +84,7 @@
 
 
 
-
-<script src="js/calendar.js"></script>
-
-
-
+<script id="calendar_route" my_url ="session/dateValue" src="js/calendar.js"></script>
 
 <script>
     $(document).ready(function () {

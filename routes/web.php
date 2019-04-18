@@ -13,6 +13,9 @@
 
 
 Route::resource('transactions','TransactionsController');
+
+Route::resource('transactionChild','TransactionChildController');
+
 Route::resource('User','UserController');
 Route::resource('posts','PostController');
 Route::resource('failedTransactions','FailedTransactionController');
@@ -30,3 +33,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::get('/','TransactionsController@storevalue');
 Route::post('session/dateValue', 'TransactionsController@storeValue');
+Route::post('session/dateCValue', 'TransactionChildController@storeValue');
