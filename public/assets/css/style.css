@@ -1525,6 +1525,7 @@ img.alignright{
 
 .relative{
 	position:relative;
+	z-index: 1;
 }
 
 .max-iframe{

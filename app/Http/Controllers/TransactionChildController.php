@@ -1,45 +1,36 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
 use App\transaction;
 use App\User;
-class FailedTransactionController extends Controller
+use Illuminate\Http\Request;
+
+class TransactionChildController extends Controller
 {
+
+    public function storeValue(Request $request)
+    {
+
+        $date_select = $request->date;
+        $who = $this->user(1);
+        $infos = transaction::all()->where("date", "=", $date_select)->groupBy('user_id');
+        $returnHTML = view('transactions.transactionChild')->with('user_names', $who)->with('all', $infos)->renderSections('content');
+
+        return response()->json(['success' => true, 'html' => $returnHTML]);
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function storeValue(Request $request)
-    {
-        //$this->date = session([ 'value' => $request->value]);
-        //$this->index();
-        //$datei = new Carbon($request->date,'Europe/London');
-        $date_select = $request->date;
-        //$datei=Carbon::createFromFormat('Y/m/d',$request->date);
-        $names = User::select('name', 'id')->get();
-        $infos = transaction::all()->where('isFailed','=','1')->where("date", "=", $date_select)->groupBy('user_id');
-
-        $returnHTML = view('failedTransactions.index')->with('user_names', $names)->with('all', $infos)->renderSections('content');
-        return response()->json(['success' => true, 'html' => $returnHTML]);
-    }
-
     public function index()
     {
-        $names = User::select('name', 'id')->get();
+        //the id will will be which user logged in
+        $who = $this->user(1);
+        $infos = transaction::all()->groupBy('user_id');
 
-        //$turn_names = $this->turninto($names, "name", "id");
-
-
-            $infos = transaction::all()->where('isFailed','=','1')->groupBy('user_id');
-
-
-        return view(('failedTransactions.index'))->with('user_names', $names)->with('all', $infos);
+        return view(('transactions.transactionChild'))->with('user_names', $who)->with('all',$infos);
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -106,4 +97,11 @@ class FailedTransactionController extends Controller
     {
         //
     }
+
+    public function user($id){
+
+        $who = User::select('name','id')->where("id","=",$id)->get();
+    return $who;
+    }
+
 }

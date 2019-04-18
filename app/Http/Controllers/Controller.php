@@ -10,4 +10,28 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+   public function arrayfk($keyArray, $valueArray) {
+        if(is_array($keyArray)) {
+            foreach($keyArray as $key => $value) {
+                $newArray[$value] = $valueArray[$key];
+            }
+        }
+        return $newArray;
+    }
+
+    public function turninto($array,$value,$setkey){
+
+        for ($i=0; $i<sizeof($array); $i++){
+            $keys[] = $array[$i][$setkey];
+            $deger[]=$array[$i][$value];
+            $sonuc = $this->arrayfk($keys,$deger);
+
+        }
+
+        return ($sonuc);
+    }
+
+
+
 }

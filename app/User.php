@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','isParent'
+        'name', 'email', 'password', 'isParent'
     ];
     //public function setIsParentAttribute($value){
     //$this->attributes['isParent'] = ($value=='on')?($value=1):($value=0);
@@ -40,4 +40,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'isParent' => 'boolean'
     ];
+
+    public function transaction()
+    {
+        return $this->hasMany(transaction::class, 'user_id', 'id')->get();
+    }
+
 }

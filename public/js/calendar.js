@@ -1,7 +1,6 @@
 
 
 
-
 /*$(document).ready(function () {
         $("#my-calendar").zabuto_calendar({
             ajax: {
@@ -25,12 +24,52 @@
         "footer":"At Paisley Park",
     }
 ];
+var page_url = document.getElementById("calendar_route").getAttribute("my_url");
+
 $(document).ready(function () {
     $("#my-calendar").zabuto_calendar({
         data: eventData,
-
+        page_url : page_url,
         action: function () {
-            return console.log(this.id);
-        },
+            var a = (this.id);
+            parts = a.split('_');
+            value = parts.pop();
+            var data = {"date" : value};
+            $.ajax({
+                type: "POST",
+                url: page_url,
+                data: data,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (data) {
+                    console.log("başarılı", value);
+                    console.log(data);
+                    console.log(page_url);
+                    //console.log("response", response);
+                    if(data.success == true){
+                    $('#temp').html(data.html.content);
+
+                    }
+                    else{
+                        alert('No Transactions');
+                        console.log(data);
+
+                    }
+                },
+                error: function() {
+                    alert('No Transactions');
+                    console.log(page_url);
+                    console.log(data);
+
+                }
+
+            });
+
+        }
+
+
     });
+
 });
+

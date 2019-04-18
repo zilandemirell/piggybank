@@ -176,8 +176,12 @@ div.zabuto_calendar div.legend span.badge {
 }
 
 
-
-.transactionTab > .nav-tabs > li > a {
+div.popup-container{
+    position: fixed;
+    display: none;
+    z-index: 999;
+}
+.transactionTab > .table > .nav-tabs > li > a {
     border: 1px solid transparent;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -186,11 +190,13 @@ div.zabuto_calendar div.legend span.badge {
 }
 
 
-.transactionTab > .nav-tabs > .active > a,
-.transactionTab > .nav-tabs > .active > a:hover {
+.transactionTab > .table > .nav-tabs > .active > a,
+.transactionTab > .table > .nav-tabs > .active > a:hover {
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
     cursor: default;
     color : #6cb2eb;
+
 }
+
