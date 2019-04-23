@@ -15,7 +15,7 @@
 Route::resource('transactions','TransactionsController');
 
 Route::resource('transactionChild','TransactionChildController');
-
+Route::resource('homeChild','TransactionChildController');
 Route::resource('User','UserController');
 Route::resource('posts','PostController');
 Route::resource('failedTransactions','FailedTransactionController');
@@ -23,13 +23,13 @@ Route::get('posts/{{$post->id}}','PostController@show');
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-//Route::get('/transactions', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('homeChild');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/homeChild', 'homeChildController@index')->name('homeChild');
 Route::get('/makeTransaction', function () {
     return view("makeTransaction");
 });
