@@ -23,7 +23,7 @@ Route::get('posts/{{$post->id}}','PostController@show');
 
 Auth::routes();
 
-Route::get('/', 'homeChildController@index')->name('homeChild');
+Route::get('/', 'HomeController@index')->name('homeChild');
 
 
 Auth::routes();
