@@ -80,13 +80,7 @@
 
 @endsection
 
-
-
-
 <script id="calendar_route" my_url ="session/dateCValue" src="js/calendar.js"></script>
-
-
-
 
 <script>
     $(document).ready(function () {

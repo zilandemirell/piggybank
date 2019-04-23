@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5470b93f-cb04-4541-9ec0-31d2de1859f8" name="Default Changelist" comment="-TransactionChild added &#10;-Calendar.js modified for two views">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionChildController.php" afterDir="false" />
+    <list default="true" id="5470b93f-cb04-4541-9ec0-31d2de1859f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FailedTransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FailedTransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionChildController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionChildController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/transactions/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transactions/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/transactions/transactionChild.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transactions/transactionChild.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
+            <state relative-caret-position="357">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
@@ -36,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionChildController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="76" lean-forward="true" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
+            <state relative-caret-position="170">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding>
                 <element signature="e#39#59#0#PHP" expanded="true" />
               </folding>
@@ -46,32 +44,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="731">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
               <folding>
-                <element signature="e#40#60#0#PHP" expanded="true" />
-                <element signature="e#1449#1558#0#PHP" />
-                <element signature="e#1809#1849#0#PHP" />
-                <element signature="e#1780#1842#0#PHP" />
-                <element signature="e#1975#2023#0#PHP" />
-                <element signature="e#2029#2169#0#PHP" />
-                <element signature="e#2174#2222#0#PHP" />
-                <element signature="e#2228#2410#0#PHP" />
-                <element signature="e#2415#2483#0#PHP" />
-                <element signature="e#2489#2623#0#PHP" />
-                <element signature="e#2628#2679#0#PHP" />
+                <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/transactions/transactionChild.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -79,17 +58,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/transactions/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="86" column="44" selection-start-line="86" selection-end-line="87" />
+            <state relative-caret-position="391">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/calendar.js">
+        <entry file="file://$PROJECT_DIR$/resources/views/transactions/transactionChild.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+            <state relative-caret-position="1377">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -113,6 +92,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="eniseirem &lt;eniseirem@gmail.com&gt;" />
         <option value="en" />
         <option value="*" />
       </list>
@@ -134,7 +114,6 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/storage/framework/views/3f08c9d37df717be9e21e14e73aaeee8bfb08234.php" />
-        <option value="$PROJECT_DIR$/resources/views/failedTransactions/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_03_30_132014_create_transactions_table.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
@@ -145,11 +124,13 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/public/css/transaction.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/transactions/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/calendar.js" />
-        <option value="$PROJECT_DIR$/resources/views/transactions/transactionChild.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/failedTransactions/index.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/public/js/calendar.js" />
+        <option value="$PROJECT_DIR$/resources/views/transactions/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FailedTransactionController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TransactionChildController.php" />
+        <option value="$PROJECT_DIR$/resources/views/transactions/transactionChild.blade.php" />
       </list>
     </option>
   </component>
@@ -237,7 +218,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="910" />
     <option name="width" value="935" />
-    <option name="height" value="1088" />
+    <option name="height" value="1090" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -260,20 +241,20 @@
             <path>
               <item name="piggybank" type="b2602c69:ProjectViewProjectNode" />
               <item name="piggybank" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="piggybank" type="b2602c69:ProjectViewProjectNode" />
               <item name="piggybank" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="piggybank" type="b2602c69:ProjectViewProjectNode" />
               <item name="piggybank" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="transactions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -287,14 +268,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xammp\htdocs\piggybank" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xammp\htdocs\piggybank\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xammp\htdocs\piggybank" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -335,7 +316,8 @@
       <workItem from="1555283960668" duration="6790000" />
       <workItem from="1555292010098" duration="9014000" />
       <workItem from="1555436396628" duration="3170000" />
-      <workItem from="1555578425831" duration="18598000" />
+      <workItem from="1555578425831" duration="25712000" />
+      <workItem from="1555930923791" duration="623000" />
     </task>
     <task id="LOCAL-00001" summary="-Transaction page added&#10;-Logo modified&#10;-FailedTransaction page added&#10;-For created pages css modifications added&#10;-calendar source files added for the pages">
       <created>1554573688470</created>
@@ -379,23 +361,36 @@
       <option name="project" value="LOCAL" />
       <updated>1555590883240</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="-TransactionChild added &#10;-Calendar.js modified for two views">
+      <created>1555599163407</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555599163407</updated>
+    </task>
+    <task id="LOCAL-00008" summary="-failedTransaction added">
+      <created>1555614464657</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1555614464657</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102349000" />
+    <option name="totallyTimeSpent" value="110086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1484" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.5625" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17626405" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49929774" visible="true" weight="0.30563003" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49929774" weight="0.30563003" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="2" sideWeight="0.50070226" side_tool="true" visible="true" weight="0.30563003" />
-      <window_info anchor="bottom" id="Version Control" order="3" weight="0.3292683" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50070226" side_tool="true" weight="0.32841823" />
+      <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.49929774" visible="true" weight="0.32841823" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3297587" />
@@ -484,16 +479,10 @@
     <MESSAGE value="-Coding Impovements&#10;-Calendar Fixed &#10;-TransactionController -&gt; Ajax finished &#10;-Temp table solution" />
     <MESSAGE value="-TransactionChild added" />
     <MESSAGE value="-TransactionChild added &#10;-Calendar.js modified for two views" />
-    <option name="LAST_COMMIT_MESSAGE" value="-TransactionChild added &#10;-Calendar.js modified for two views" />
+    <MESSAGE value="-failedTransaction added" />
+    <option name="LAST_COMMIT_MESSAGE" value="-failedTransaction added" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
@@ -512,13 +501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -598,13 +580,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/failedTransactions/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -633,9 +608,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/channels.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FailedTransactionController.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.php">
@@ -672,13 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_30_132014_create_transactions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/calendarCreate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -697,20 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="36" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/posts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/transaction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="59" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -748,9 +699,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionChildController">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionChildController" />
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -765,61 +714,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/failedTransactions/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        <state relative-caret-position="306">
+          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/transactions/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="86" column="44" selection-start-line="86" selection-end-line="87" />
+        <state relative-caret-position="187">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/transactions/transactionChild.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_30_132014_create_transactions_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+        <state relative-caret-position="425">
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="17">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#40#60#0#PHP" expanded="true" />
-            <element signature="e#1449#1558#0#PHP" />
-            <element signature="e#1809#1849#0#PHP" />
-            <element signature="e#1780#1842#0#PHP" />
-            <element signature="e#1975#2023#0#PHP" />
-            <element signature="e#2029#2169#0#PHP" />
-            <element signature="e#2174#2222#0#PHP" />
-            <element signature="e#2228#2410#0#PHP" />
-            <element signature="e#2415#2483#0#PHP" />
-            <element signature="e#2489#2623#0#PHP" />
-            <element signature="e#2628#2679#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FailedTransactionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
+        <state relative-caret-position="357">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/transactions/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/transactions/transactionChild.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionChildController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="76" lean-forward="true" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
+        <state relative-caret-position="170">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding>
             <element signature="e#39#59#0#PHP" expanded="true" />
           </folding>

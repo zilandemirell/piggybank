@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\transaction;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class TransactionChildController extends Controller
 {
@@ -12,7 +14,8 @@ class TransactionChildController extends Controller
     {
 
         $date_select = $request->date;
-        $who = $this->user(1);
+        $loggedUser= Auth::user()->id;
+        $who = $this->user($loggedUser);
         $infos = transaction::all()->where("date", "=", $date_select)->groupBy('user_id');
         $returnHTML = view('transactions.transactionChild')->with('user_names', $who)->with('all', $infos)->renderSections('content');
 
@@ -25,8 +28,8 @@ class TransactionChildController extends Controller
      */
     public function index()
     {
-        //the id will will be which user logged in
-        $who = $this->user(1);
+        $loggedUser= Auth::user()->id;
+        $who = $this->user($loggedUser);
         $infos = transaction::all()->groupBy('user_id');
 
         return view(('transactions.transactionChild'))->with('user_names', $who)->with('all',$infos);

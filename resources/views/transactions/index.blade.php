@@ -19,8 +19,9 @@
 
 
                 <ul class="nav nav-tabs">
-                <!--  <li class="active"><a href="#1" data-toggle="tab"><i class="icon-briefcase"></i> @php echo $user_names[1];@endphp</a></li>
-            -->
+                <!--  <li class="active"><a href="#1" data-toggle="tab"><i class="icon-briefcase"></i> @php echo $user_names[1];@endphp</a></li>-->
+
+
                     @foreach ($user_names as $users)
                         <li><a href="#{{$users->id}}" data-toggle="tab">{{$users->name}}</a></li>
                     @endforeach
