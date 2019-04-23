@@ -13,12 +13,13 @@
 
 
 Route::resource('transactions','TransactionsController');
-
 Route::resource('transactionChild','TransactionChildController');
-Route::resource('homeChild','TransactionChildController');
+Route::resource('homeChild','homeChildController');
 Route::resource('User','UserController');
 Route::resource('posts','PostController');
 Route::resource('failedTransactions','FailedTransactionController');
+Route::resource('failedTransactionsChild', 'FailedTransactionChildController');
+
 Route::get('posts/{{$post->id}}','PostController@show');
 
 Auth::routes();
@@ -39,3 +40,4 @@ Route::get('/makeTransaction', function () {
 Route::post('session/dateValue', 'TransactionsController@storeValue');
 Route::post('session/dateCValue', 'TransactionChildController@storeValue');
 Route::post('session/dateFValue', 'FailedTransactionController@storeValue');
+Route::post('session/dateFCValue', 'FailedTransactionChildController@storeValue');

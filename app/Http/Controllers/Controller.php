@@ -6,12 +6,13 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use App\User;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-   public function arrayfk($keyArray, $valueArray) {
+  /* public function arrayfk($keyArray, $valueArray) {
         if(is_array($keyArray)) {
             foreach($keyArray as $key => $value) {
                 $newArray[$value] = $valueArray[$key];
@@ -30,6 +31,11 @@ class Controller extends BaseController
         }
 
         return ($sonuc);
+    }*/
+    public function user($id){
+
+        $who = User::select('name','id')->where("id","=",$id)->get();
+        return $who;
     }
 
 

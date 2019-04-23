@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.childLayout.app')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 

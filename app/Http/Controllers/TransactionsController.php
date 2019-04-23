@@ -34,15 +34,7 @@ class TransactionsController extends Controller
     {
 
         $names = User::select('name', 'id')->get();
-
-        //$turn_names = $this->turninto($names, "name", "id");
-
-        if (isset ($this->date)) {
-            $datei = $this->date;
-            $infos = transaction::all()->where("date", "=", $datei)->groupBy('user_id');
-        } else {
-            $infos = transaction::all()->groupBy('user_id');
-        }
+        $infos = transaction::all()->groupBy('user_id');
 
         return view(('transactions.index'))->with('user_names', $names)->with('all', $infos);
     }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\transaction;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -101,10 +100,6 @@ class TransactionChildController extends Controller
         //
     }
 
-    public function user($id){
 
-        $who = User::select('name','id')->where("id","=",$id)->get();
-    return $who;
-    }
 
 }
