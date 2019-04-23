@@ -26,7 +26,7 @@
 
     .intro1 > #intro .intro-content  {
 
-        background: rgb(253,221,230);
+        background: rgb(242, 177, 176);
 
         position: absolute;
         position: absolute;
