@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\transaction;
 use App\User;
 class FailedTransactionController extends Controller
