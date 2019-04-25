@@ -52,7 +52,7 @@
              <ul class="nav topnav">
 
                <li class="dropdown success">
-                 <a href="./"><i class="icon-home icon-white"></i>Home</a>
+                 <a href="./homeChild"><i class="icon-home icon-white"></i>Home</a>
                </li>
                <li class="dropdown primary">
                  <a href="./transactionChild"><i class="icon-star icon-white"></i>Transaction Details</a>
