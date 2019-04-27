@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.childLayout.app')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
@@ -83,11 +83,7 @@
 
 @endsection
 
-
-
-<script id="calendar_route" my_url ="session/dateFValue" src="js/calendar.js"></script>
-
-
+<script id="calendar_route" my_url ="session/dateFCValue" src="js/calendar.js"></script>
 
 <script>
     $(document).ready(function () {

@@ -32,8 +32,7 @@ class FailedTransactionController extends Controller
 
         //$turn_names = $this->turninto($names, "name", "id");
 
-
-            $infos = transaction::all()->where('isFailed','=','1')->groupBy('user_id');
+        $infos = transaction::all()->where('isFailed','=','1')->groupBy('user_id');
 
 
         return view(('failedTransactions.index'))->with('user_names', $names)->with('all', $infos);
