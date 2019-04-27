@@ -24,9 +24,10 @@ class TransactionsController extends Controller
         //$datei=Carbon::createFromFormat('Y/m/d',$request->date);
         $names = User::select('name', 'id')->get();
         $infos = transaction::all()->where("date", "=", $date_select)->groupBy('user_id');
-        $returnHTML = view('transactions.index')->with('user_names', $names)->with('all', $infos)->renderSections('content');
 
-        return response()->json(['success' => true, 'html' => $returnHTML]);
+
+        $returnHTML = view('transactions.transTable')->with('user_names', $names)->with('all', $infos)->render();
+        return response()->json(['success' => true, 'html' => $returnHTML ]);
     }
 
 

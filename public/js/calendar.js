@@ -27,6 +27,7 @@
 var page_url = document.getElementById("calendar_route").getAttribute("my_url");
 
 $(document).ready(function () {
+    console.log('document ready, MainTransTutucu=',$('#MainTransTutucu'));
     $("#my-calendar").zabuto_calendar({
         data: eventData,
         page_url : page_url,
@@ -48,8 +49,7 @@ $(document).ready(function () {
                     console.log(page_url);
                     //console.log("response", response);
                     if(data.success == true){
-                    $('#temp').html(data.html.content);
-
+                        $('#MainTransTutucu').empty().append(data.html);
                     }
                     else{
                         alert('No Transactions');

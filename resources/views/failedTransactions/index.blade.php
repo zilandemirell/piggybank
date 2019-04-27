@@ -39,6 +39,9 @@
                                         <th> Evidence</th>
                                     </tr>
                                     </thead>
+                                    @if (empty($all[$users->id]) )
+                                        No Transaction Found
+                                    @else
                                     @foreach($all[$users->id] as $transaction)
 
                                         <tbody>
@@ -49,7 +52,7 @@
                                         </tr>
                                         @endforeach
                                         </tbody>
-
+                                    @endif
                                 </table>
 
                             </div>
@@ -82,9 +85,7 @@
 
 
 
-
 <script id="calendar_route" my_url ="session/dateFValue" src="js/calendar.js"></script>
-
 
 
 

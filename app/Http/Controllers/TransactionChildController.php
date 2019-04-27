@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,13 +14,15 @@ class TransactionChildController extends Controller
     {
 
         $date_select = $request->date;
-        $loggedUser= Auth::user()->id;
+        $loggedUser = Auth::user()->id;
         $who = $this->user($loggedUser);
         $infos = transaction::all()->where("date", "=", $date_select)->groupBy('user_id');
-        $returnHTML = view('transactions.transactionChild')->with('user_names', $who)->with('all', $infos)->renderSections('content');
+
+        $returnHTML = view('transactions.transTable')->with('user_names', $who)->with('all', $infos)->render();
 
         return response()->json(['success' => true, 'html' => $returnHTML]);
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,11 +30,11 @@ class TransactionChildController extends Controller
      */
     public function index()
     {
-        $loggedUser= Auth::user()->id;
+        $loggedUser = Auth::user()->id;
         $who = $this->user($loggedUser);
         $infos = transaction::all()->groupBy('user_id');
 
-        return view(('transactions.transactionChild'))->with('user_names', $who)->with('all',$infos);
+        return view(('transactions.transactionChild'))->with('user_names', $who)->with('all', $infos);
     }
 
     /**
@@ -47,7 +50,7 @@ class TransactionChildController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -58,7 +61,7 @@ class TransactionChildController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -69,7 +72,7 @@ class TransactionChildController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -80,8 +83,8 @@ class TransactionChildController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -92,14 +95,13 @@ class TransactionChildController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
     }
-
 
 
 }
