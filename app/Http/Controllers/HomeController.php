@@ -34,13 +34,13 @@ class HomeController extends Controller
         //$isParent=Auth::user()->isParent;
         $users = User::all();
         $userBalance=[];
-        $count=0;
+       
         foreach ($users as $user) {
 
            $totalBalance = transaction::where('user_id', $user->id) -> sum('balance');
             $userName = $user->name;
           $userBalance[$userName] = $totalBalance; 
-           $count = $count +1;
+        
         }
      
         return view('home')->with('userBalance', $userBalance);

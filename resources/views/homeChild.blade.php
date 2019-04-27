@@ -26,7 +26,7 @@
 
     .intro1 > #intro .intro-content  {
 
-        background: rgb(253,221,230);
+        background: rgb(242, 177, 176);
 
         position: absolute;
         position: absolute;
@@ -120,12 +120,25 @@
             <div class="intro-content">
                 <h2>Welcome to Smart Piggy Bank!</h2>
                 <h3>You can see your total balance in the counter and go to transaction details and failed transactions from the menu </h3>
-                childdd!!
+                
             </div>
         </section>
     </div>
     
+    @foreach ($userBalance as $userName => $totalBalance)
+
+    
+        <div class="counter " align="center">
+        <div align="center"><i class="fa fa-2x">{{$userName}}</i></div>
+        
+        <h2 style="color:#f2b1b0" class="timer count-title count-number" data-to="{{$totalBalance}}" data-speed="900"></h2>
+    </div>
+        
    
+                
+                
+    
+    @endforeach
  
    
 @endsection
