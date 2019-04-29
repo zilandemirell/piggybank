@@ -66,8 +66,10 @@
               </li>
                <li class="warning">
                  <a href="contact.html"><i class="icon-user icon-white"></i>Profile</a>
-
                </li>
+               <li class="dropdown success">
+                <a href="{{ url('/logout') }}"><i class="icon-home icon-white"></i>Logout</a>
+              </li>
              </ul>
            </nav>
          </div>
