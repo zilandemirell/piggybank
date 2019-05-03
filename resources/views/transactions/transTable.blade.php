@@ -1,7 +1,6 @@
 
     <div class="table" >
 
-        <h4>Transaction Records</h4>
 
 
         <ul class="nav nav-tabs">
