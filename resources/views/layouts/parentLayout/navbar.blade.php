@@ -52,13 +52,13 @@
              <ul class="nav topnav">
 
                <li class="dropdown success">
-                 <a href="./homeChild"><i class="icon-home icon-white"></i>Home</a>
+                 <a href="./home"><i class="icon-home icon-white"></i>Home</a>
                </li>
                <li class="dropdown primary">
-                 <a href="./transactionChild"><i class="icon-star icon-white"></i>Transaction Details</a>
+                 <a href="./transactions"><i class="icon-star icon-white"></i>Transaction Details</a>
                </li>
                <li class="dropdown danger">
-                 <a href="./failedTransactionsChild"><i class="icon-minus-sign icon-white"></i>Failed Transactions</a>
+                 <a href="./failedTransactions"><i class="icon-minus-sign icon-white"></i>Failed Transactions</a>
                </li>
               </li>
               <li class="dropdown info">

@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Illuminate\Support\Facades\Auth;
+use App\User;
 class LoginController extends Controller
 {
     /*
@@ -31,6 +32,20 @@ class LoginController extends Controller
      *
      * @return void
      */
+    
+    protected function redirectTo()
+    {
+        if (Auth::user()->isParent==1) {
+            return '/home';
+        }
+        return '/homeChild';
+    }
+    public function logout()
+    {
+        Auth::logout();
+
+    return redirect('/login');
+}
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
