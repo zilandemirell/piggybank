@@ -40,7 +40,12 @@ class LoginController extends Controller
         }
         return '/homeChild';
     }
+    public function logout()
+    {
+        Auth::logout();
 
+    return redirect('/login');
+}
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

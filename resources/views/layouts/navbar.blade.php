@@ -46,34 +46,6 @@
      <img width="230" src="assets/img/piggy.jpeg" alt="" />
      </a>
          <!-- end logo -->
-         <!-- top menu -->
-         <div>
-           <nav>
-             <ul class="nav topnav">
-
-               <li class="dropdown success">
-                 <a href="./home"><i class="icon-home icon-white"></i>Home</a>
-               </li>
-               <li class="dropdown primary">
-                 <a href="./transactions"><i class="icon-star icon-white"></i>Transaction Details</a>
-               </li>
-               <li class="dropdown danger">
-                 <a href="./failedTransactions"><i class="icon-minus-sign icon-white"></i>Failed Transactions</a>
-               </li>
-              </li>
-              <li class="dropdown info">
-                <a href="./makeTransaction"><i class="icon-plus-sign icon-white"></i>New Transaction</a>
-              </li>
-               <li class="warning">
-                 <a href="contact.html"><i class="icon-user icon-white"></i>Profile</a>
-               </li>
-               <li class="dropdown success">
-                <a href="{{ url('/logout') }}"><i class="icon-home icon-white"></i>Logout</a>
-              </li>
-             </ul>
-           </nav>
-         </div>
-         <!-- end menu -->
        </div>
      </div>
    </div>

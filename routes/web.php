@@ -24,9 +24,7 @@ Route::get('posts/{{$post->id}}','PostController@show');
 
 Auth::routes();
 
-Route::get('/',  function () {
-    return view("auth/login");
-});
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('homeChild');
 
 
 Auth::routes();
@@ -36,7 +34,7 @@ Route::get('/homeChild', 'homeChildController@index')->name('homeChild');
 Route::get('/makeTransaction', function () {
     return view("makeTransaction");
 });
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 //Route::get('/','TransactionsController@storevalue');
 Route::post('session/dateValue', 'TransactionsController@storeValue');
