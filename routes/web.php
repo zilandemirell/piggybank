@@ -24,7 +24,9 @@ Route::get('posts/{{$post->id}}','PostController@show');
 
 Auth::routes();
 
-Route::get('/', 'Auth\LoginController@showLoginForm')->name('homeChild');
+Route::get('/', function () {
+    return view("firstPage");
+});
 
 
 Auth::routes();

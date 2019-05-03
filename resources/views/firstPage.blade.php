@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 <style>
@@ -18,10 +19,11 @@ body {
 <div class="card border-0 shadow my-5">
   <div class="card-body p-5">
         <div style="height: 200px"></div>
-    <h1 class="font-weight-light">Fixed Full Page Background Image</h1>
-    <p class="lead">In this snippet, the background image is fixed to the body element. Content on the page will scroll, but the image will remain in a fixed position!</p>
-    <a href="#" class="btn btn-rounded btn-large btn-info">Large size</a>
-  
+    <h1 class="font-weight-light">>Welcome to the smart piggy bank!!</h1>
+    <p class="lead">This website is the belong to the Smart Piggy Bank and used for viewing transactions in the bank.</p>
+    <p class="lead">You need to login or register to use the website.</p>
+    <a href="./login" class="btn btn-rounded btn-large btn-info">Login</a>
+    <a href="./register" class="btn btn-rounded btn-large btn-info">Register</a>  
   </div>
 </div>
 </div>
