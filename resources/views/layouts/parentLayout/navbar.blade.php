@@ -13,7 +13,12 @@
 	background-color: #ed7864;
 	color:#fff;
 }
-
+.navbar .nav .logout > a,
+.navbar .nav .logout > a:hover,
+.navbar .nav .logout > a:focus {
+	background-color: #ab95f9;
+	color:#fff;
+}
 .navbar .nav .danger > a,
 .navbar .nav .danger > a:hover,
 .navbar .nav .danger > a:focus {
@@ -62,12 +67,12 @@
                </li>
               </li>
               <li class="dropdown info">
-                <a href="./makeTransaction"><i class="icon-plus-sign icon-white"></i>New Transaction</a>
+                <a href="./makeTransactionParent"><i class="icon-plus-sign icon-white"></i>New Transaction</a>
               </li>
                <li class="warning">
                  <a href="contact.html"><i class="icon-user icon-white"></i>Profile</a>
                </li>
-               <li class="dropdown success">
+               <li class="dropdown logout">
                 <a href="{{ url('/logout') }}"><i class="icon-home icon-white"></i>Logout</a>
               </li>
              </ul>
