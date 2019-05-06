@@ -40,6 +40,7 @@ Route::get('/makeTransactionParent', function () {
     return view("makeTransactionParent");
 });
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/test-request-with-guzzle', 'GuzzleController@index');
 
 //Route::get('/','TransactionsController@storevalue');
 Route::post('session/dateValue', 'TransactionsController@storeValue');
