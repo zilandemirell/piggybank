@@ -10,7 +10,6 @@
         });
     });*/
 
-    <!-- use fixed data -->
 
 
     var eventData = [

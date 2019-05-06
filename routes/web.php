@@ -24,17 +24,23 @@ Route::get('posts/{{$post->id}}','PostController@show');
 
 Auth::routes();
 
-Route::get('/', 'Auth\LoginController@showLoginForm')->name('homeChild');
+Route::get('/', function () {
+    return view("firstPage");
+});
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/homeChild', 'homeChildController@index')->name('homeChild');
-Route::get('/makeTransaction', function () {
-    return view("makeTransaction");
+Route::get('/makeTransactionChild', function () {
+    return view("makeTransactionChild");
+});
+Route::get('/makeTransactionParent', function () {
+    return view("makeTransactionParent");
 });
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/test-request-with-guzzle', 'GuzzleController@index');
 
 //Route::get('/','TransactionsController@storevalue');
 Route::post('session/dateValue', 'TransactionsController@storeValue');
