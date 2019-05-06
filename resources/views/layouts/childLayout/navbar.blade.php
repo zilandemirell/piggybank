@@ -70,7 +70,7 @@
                 <a href="./makeTransactionChild"><i class="icon-plus-sign icon-white"></i>New Transaction</a>
               </li>
                <li class="warning">
-                 <a href="contact.html"><i class="icon-user icon-white"></i>Profile</a>
+                 <a href="./profileChild"><i class="icon-user icon-white"></i>Profile</a>
                </li>
                <li class="dropdown logout">
                 <a href="{{ url('/logout') }}"><i class="icon-home icon-white"></i>Logout</a>

@@ -41,7 +41,8 @@ Route::get('/makeTransactionParent', function () {
 });
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/test-request-with-guzzle', 'GuzzleController@index');
-
+Route::get('/profile', 'profileController@index')->name('profile');
+Route::get('/profileChild', 'profileChildController@index')->name('profileChild');
 //Route::get('/','TransactionsController@storevalue');
 Route::post('session/dateValue', 'TransactionsController@storeValue');
 Route::post('session/dateCValue', 'TransactionChildController@storeValue');
