@@ -19,6 +19,9 @@ Route::resource('User','UserController');
 Route::resource('posts','PostController');
 Route::resource('failedTransactions','FailedTransactionController');
 Route::resource('failedTransactionsChild', 'FailedTransactionChildController');
+Route::resource('makeTransactionChild', 'makeTransactionController');
+//Route::resource('makeTransactionParent', 'makeTransactionController');
+
 
 Route::get('posts/{{$post->id}}','PostController@show');
 
@@ -33,17 +36,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/homeChild', 'homeChildController@index')->name('homeChild');
-Route::get('/makeTransactionChild', function () {
-    return view("makeTransactionChild");
-});
-Route::get('/makeTransactionParent', function () {
-    return view("makeTransactionParent");
-});
+//Route::get('/makeTransactionChild', 'makeTransactionController@openDoor')->name('makeTransactionChild');
+//Route::get('/makeTransactionParent', 'makeTransactionController')->name('makeTransactionParent');
+
+
+
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
-Route::get('/test-request-with-guzzle', 'GuzzleController@index');
+//Route::get('/test-request-with-guzzle', 'GuzzleController@index');
 
 //Route::get('/','TransactionsController@storevalue');
 Route::post('session/dateValue', 'TransactionsController@storeValue');
 Route::post('session/dateCValue', 'TransactionChildController@storeValue');
 Route::post('session/dateFValue', 'FailedTransactionController@storeValue');
 Route::post('session/dateFCValue', 'FailedTransactionChildController@storeValue');
+
+
+Route::post('session/openDoor', 'makeTransactionController@opendoor');

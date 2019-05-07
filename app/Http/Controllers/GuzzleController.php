@@ -32,7 +32,6 @@ class GuzzleController extends Controller
             foreach ($items as $item) {
                 echo '<h3>  ' . $item->balance . '</h3>';
             }
-           
         }
  
     }
