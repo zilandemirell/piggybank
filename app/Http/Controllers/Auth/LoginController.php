@@ -38,8 +38,10 @@ class LoginController extends Controller
         if (Auth::user()->isParent==1) {
             return '/home';
         }
+        else {
+
         return '/homeChild';
-    }
+    }}
     public function logout()
     {
         Auth::logout();

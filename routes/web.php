@@ -34,6 +34,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/homeChild', 'homeChildController@index')->name('homeChild');
 Route::get('/makeTransactionChild', 'makeTransactionController@index')->name('makeTransactionChild');

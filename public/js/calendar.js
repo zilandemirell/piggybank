@@ -12,7 +12,9 @@
 
 
 
-    var eventData = [
+
+
+var eventData = [
     {"date":"2019-04-01","badge":false,"title":"Example 1"},
     {"date":"2019-04-02","badge":false,"title":"Example 2"},
     {
@@ -27,6 +29,7 @@ var page_url = document.getElementById("calendar_route").getAttribute("my_url");
 
 $(document).ready(function () {
     console.log('document ready, MainTransTutucu=',$('#MainTransTutucu'));
+    //console.log(transData);
     $("#my-calendar").zabuto_calendar({
         data: eventData,
         page_url : page_url,
