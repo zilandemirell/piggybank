@@ -37,6 +37,8 @@
                                     <td>{{$transaction->balance}}</td>
                                     <td><a id="{{$transaction->proof}}" href="#" class="button-to-click">Image Link</a></td>
                                 </tr>
+
+                                <input id="dates" type="hidden" value="{{$transaction->date}}">
                                 @endforeach
                                 </tbody>
                                 @endif
