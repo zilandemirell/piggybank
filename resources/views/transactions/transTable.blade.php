@@ -35,12 +35,18 @@
                                 <tr>
                                     <td>{{$transaction->hour}}</td>
                                     <td>{{$transaction->balance}}</td>
-                                    <td><a href="#" class="button-to-click">Image Link</a></td>
+                                    <td><a id="{{$transaction->proof}}" href="#" class="button-to-click">Image Link</a></td>
                                 </tr>
                                 @endforeach
                                 </tbody>
                                 @endif
                     </table>
+
+                    <div class="popup-container">
+                        <img src="">
+                        <a class="popup-close" href="#">Close</a>
+                    </div>
+
 
                 </div>
             @endforeach
@@ -51,23 +57,30 @@
     </div>
 
     <script>
+
+
         $(document).ready(function () {
             // config
             popup = $('.popup-container');
             clickme = $('.button-to-click');
-
+           // source = $('#myvalue');
             // pop-up
             vh = $(window).height();
             vw = $(window).width();
             bw = popup.width();
             bh = popup.height();
-            clickme.click(function (e) {
-                e.preventDefault();
-                popup.fadeOut();
-                popup.css('left', vw / 2 - bw / 2);
-                popup.css('top', vh / 2 - bh / 2);
-                popup.fadeIn();
-            });
+            clickme.on('click', function(e)
+                {
+                    $source = $(this).attr('id');
+                    popup.children('img').attr('src',$source);
+                    e.preventDefault();
+                    popup.fadeOut();
+                    popup.css('left', vw / 2 - bw / 2);
+                    popup.css('top', vh / 2 - bh / 2);
+                    popup.fadeIn();
+                }
+            );
+
             //close button
             $('.popup-close').click(function () {
                 $('.popup-container').fadeOut();
