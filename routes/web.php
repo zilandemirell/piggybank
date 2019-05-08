@@ -19,7 +19,7 @@ Route::resource('User','UserController');
 Route::resource('posts','PostController');
 Route::resource('failedTransactions','FailedTransactionController');
 Route::resource('failedTransactionsChild', 'FailedTransactionChildController');
-Route::resource('makeTransactionChild', 'makeTransactionController');
+//Route::resource('makeTransactionChild', 'makeTransactionController');
 //Route::resource('makeTransactionParent', 'makeTransactionController');
 
 
@@ -36,8 +36,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/homeChild', 'homeChildController@index')->name('homeChild');
-//Route::get('/makeTransactionChild', 'makeTransactionController@openDoor')->name('makeTransactionChild');
-//Route::get('/makeTransactionParent', 'makeTransactionController')->name('makeTransactionParent');
+Route::get('/makeTransactionChild', 'makeTransactionController@index')->name('makeTransactionChild');
+Route::get('/makeTransactionParent', 'makeTransactionController@indexParent')->name('makeTransactionParent');
 
 
 

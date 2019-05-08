@@ -15,6 +15,9 @@ class makeTransactionController extends Controller
         return view('makeTransactionChild');
     }
 
+    public function indexParent(){
+        return view('makeTransactionParent');
+    }
     public function getDummy()
     {
         //request url

@@ -26,11 +26,9 @@
                 </div>
             </div>
 
-            <div class="popup-container">
-                <img src="assets/img/piggy.jpeg">
-                <a class="popup-close" href="#">Close</a>
-            </div>
+
         </div>
+
     </div>
 
 
