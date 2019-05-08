@@ -21,7 +21,9 @@ class CreateTransactionsTable extends Migration
             $table->double('balance');
             //$table->boolean('isFailed');
             $table->time('hour');
-            $table->timestamp('created_at')->nullable();
+
+            //$table->timestamp('created_at')->nullable();
+            $table->timestamps();
 
         });
 
