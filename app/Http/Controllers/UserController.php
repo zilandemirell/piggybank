@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
@@ -73,37 +75,27 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
      //bu fonksiyon update ile çalışır
-    public function edit($id)
-    {
-      //username name password değişimlerinde kullanılabilir
-      //önce user id ile ilişkili user çekilir
-      $user = User::find($id);
- //sonra view içinde gösterilir
-      return View::make('user.edit')->with('user',$user);
+     public function edit(User $user)
+    {   
+        $user = Auth::user();
+        return view('user.edit', compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-      if(validator()->fails){
-        return Redirect::to('user/create'); //errorlar ile birlikte
-      }
-      else{
-        $user= new User;
-        $user->name = Input::get('name');
-        $user->surname = Input::get('surname');
-        $user->password = Input::get('password');
-        $user->isParent = Input::get('isParent');
+    public function update(User $user)
+    { 
+        $this->validate(request(), [
+            'name' => 'required',
+            //'email' => 'required|email|unique:users',
+            //'password' => 'required|min:6|confirmed'
+        ]);
+
+        $user->name = request('name');
+        $user->email = request('email');
+        //$user->password = bcrypt(request('password'));
+
         $user->save();
-        //user için oluşturulmuş bir page varsa oan yönlendirilir
-        return Redirect::to('userpage');
-      }
+
+        return back();
     }
 
     /**

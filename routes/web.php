@@ -42,6 +42,9 @@ Route::get('/makeTransactionParent', 'makeTransactionController@indexParent')->n
 
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/profile', 'profileController@index')->name('profile');
+Route::get('/profileChild', 'profileChildController@index')->name('profileChild');
+
 //Route::get('/test-request-with-guzzle', 'GuzzleController@index');
 
 //Route::get('/','TransactionsController@storevalue');
