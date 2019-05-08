@@ -52,9 +52,10 @@ class makeTransactionController extends Controller
         $trans = new transaction;
         $trans->user_id = $user_id;
         $trans->date = $date;
-       // $trans->balance = $dummy>balance;
+        $trans->balance = $dummy->balance;
         $trans->hour = $hour;
-        //$trans->isFailed = ;
+        $trans->isFailed = $dummy->isFailed;
+        $trans->proof = $dummy->proof;
 
 
         $trans->save();

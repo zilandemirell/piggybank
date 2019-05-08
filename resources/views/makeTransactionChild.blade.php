@@ -40,8 +40,8 @@ body {
               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function (response) {
-            console.log("başarılı");
-            console.log(response);
+            console.log("başarılı", response);
+                alert ("Your Transaction saved succesfully");
 
             }
         })}
