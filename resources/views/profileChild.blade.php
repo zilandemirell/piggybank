@@ -20,19 +20,7 @@
             <textarea rows="3" class="input-xlarge" readonly>
                 {{$loggedUser->isParent==true?"You have parent priority": "You don't have parent priority"}} 
             </textarea>
-          	<div>
-        	    <button class="btn btn-primary" >Update</button>
-        	</div>
         </form>
-      </div>
-      <div class="tab-pane" id="profile">
-    	<form id="tab2">
-        	<label>New Password</label>
-        	<input type="password" class="input-xlarge">
-        	<div>
-        	    <button class="btn btn-primary" href="/user/editChild">Update</button>
-        	</div>
-    	</form>
       </div>
   </div>
 </div> 
