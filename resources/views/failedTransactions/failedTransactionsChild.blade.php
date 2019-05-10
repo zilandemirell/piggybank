@@ -11,9 +11,11 @@
 
 @section('content')
     <div id='Transactions'>
+        <h4>Failed Transaction Records</h4>
+
         <div class="mainContainer row-fluid">
-                <div id="MainTransTutucu" class="transactionTab span6">
-                    <h4>Failed Transaction Records</h4>
+
+            <div id="MainTransTutucu" class="transactionTab span6">
 
                     @component('transactions.transTable',['user_names'=>$user_names, 'all'=>$all])
                     @endcomponent

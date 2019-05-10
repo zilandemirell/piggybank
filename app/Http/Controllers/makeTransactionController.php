@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class makeTransactionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('makeTransactionChild');
@@ -20,6 +24,8 @@ class makeTransactionController extends Controller
     }
     public function getDummy()
     {
+
+
         //request url
         $url = 'https://my.api.mockaroo.com/smartpiggybank.json?key=e6adf7f0';
 
@@ -41,11 +47,12 @@ class makeTransactionController extends Controller
             //get body content
             $body = $response->getBody();
             $items = json_decode($body);
-           /* foreach ($items as $item) {
-                echo '<h3>  ' . $item->balance . '</h3>';
-            }*/
+            /* foreach ($items as $item) {
+                 echo '<h3>  ' . $item->balance . '</h3>';
+             }*/
+
         }
-        return $items;
+        return ($items);
     }
 
     public function record($dummy, $date, $hour, $user_id)
@@ -63,17 +70,23 @@ class makeTransactionController extends Controller
 
         $trans->save();
 
-
     }
 
     public function openDoor()
     {
+try {
+    $this->doorClosed();
+    //wait for the response from raspberry
+$status="true";
+}
 
-        //wait(2000);
-        $this->doorClosed();
+catch (\Exception $e){
+    $status="false";
 
-        return ["status" => true];
-        //wait for the response from raspberry
+}
+finally{
+    return $status;
+}
     }
 
     //local/raspsendingdata
@@ -85,15 +98,17 @@ class makeTransactionController extends Controller
 
         $jsonq = $this->getDummy();
         //this data created for simulation; originally this method called by raspberry and data will be sended from it.
-
         $mytime = Carbon::now();
         $input = $mytime->toDateTimeString();
         $format1 = 'Y-m-d';
         $format2 = 'H:i:s';
-        $date = Carbon::parse($input)->format($format1);
-        $hour = Carbon::parse($input)->format($format2);
-
-
+        $timey = Carbon::createFromFormat('Y-m-d H:i:s', $input, 'Europe/Istanbul');
+       // $timey->setTimezone('');
+        $date = Carbon::parse($timey)->format($format1);
+        $hour = Carbon::parse($timey)->format($format2);
+        //$hour->timezone('Europe/Istanbul');
+       // $hour = Carbon::createFromFormat($format2, $input,'Europe/Istanbul');
+        //$hour->setTimezone('UTC');
         $dummy = $this->record($jsonq, $date, $hour, $who);
 
 

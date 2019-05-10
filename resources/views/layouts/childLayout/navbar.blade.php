@@ -47,7 +47,7 @@
        <div class="container">
          <!-- logo -->
 
-         <a class="brand logo" href="./">
+         <a class="brand logo" href="./homeChild">
      <img width="230" src="assets/img/piggy.jpeg" alt="" />
      </a>
          <!-- end logo -->
