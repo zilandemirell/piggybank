@@ -16,7 +16,8 @@
         <div class="mainContainer row-fluid">
             <div id="MainTransTutucu" class="transactionTab span6">
 
-            @component('transactions.transTable', ['user_names'=>$user_names, 'all'=>$all])
+
+            @component('transactions.transTable', ['user_names'=>$user_names, 'all'=>$all, "parents"=>$parents])
                     @endcomponent
 
 
