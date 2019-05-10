@@ -54,11 +54,12 @@ $(document).ready(function () {
                         alert('No Transactions');
 
                     }console.log(data.success);
+
                     $('#MainTransTutucu').empty().append(data.html);
 
                 },
                 error: function() {
-                    alert('No Transactions');
+                    //alert('No Transactions');
                     console.log(page_url);
                     console.log(data);
 
