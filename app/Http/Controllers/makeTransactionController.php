@@ -73,7 +73,6 @@ class makeTransactionController extends Controller
     public function openDoor()
     {
 
-        //wait(2000);
         $this->doorClosed();
 
         return ["status" => true];
@@ -94,10 +93,13 @@ class makeTransactionController extends Controller
         $input = $mytime->toDateTimeString();
         $format1 = 'Y-m-d';
         $format2 = 'H:i:s';
-        $date = Carbon::parse($input)->format($format1);
-        $hour = Carbon::parse($input)->format($format2);
-
-
+        $timey = Carbon::createFromFormat('Y-m-d H:i:s', $input, 'Europe/Istanbul');
+       // $timey->setTimezone('');
+        $date = Carbon::parse($timey)->format($format1);
+        $hour = Carbon::parse($timey)->format($format2);
+        //$hour->timezone('Europe/Istanbul');
+       // $hour = Carbon::createFromFormat($format2, $input,'Europe/Istanbul');
+        //$hour->setTimezone('UTC');
         $dummy = $this->record($jsonq, $date, $hour, $who);
 
 

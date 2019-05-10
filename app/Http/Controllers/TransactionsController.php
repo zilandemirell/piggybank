@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\transaction;
 use App\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TransactionsController extends Controller
@@ -25,7 +24,6 @@ class TransactionsController extends Controller
         //$this->index();
         //$datei = new Carbon($request->date,'Europe/London');
         $date_select = $request->date;
-        //$datei=Carbon::createFromFormat('Y/m/d',$request->date);
         $names = User::select('name', 'id')->get();
         $infos = transaction::all()->where("date", "=", $date_select)->groupBy('user_id');
 
