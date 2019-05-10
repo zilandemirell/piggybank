@@ -38,7 +38,6 @@ class TransactionsController extends Controller
 
         $names = User::select('name', 'id')->get();
         $infos = transaction::all()->groupBy('user_id');
-
         return view(('transactions.index'))->with('user_names', $names)->with('all', $infos);
     }
 

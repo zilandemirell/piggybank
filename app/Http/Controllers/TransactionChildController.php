@@ -36,7 +36,15 @@ class TransactionChildController extends Controller
         $loggedUser = Auth::user()->id;
         $who = $this->user($loggedUser);
         $infos = transaction::all()->groupBy('user_id');
+        /*foreach ($infoy[$who] as $infos){
+            $infos->sortByDesc('id');
+        }*/
 
+
+        //$infos = transaction::groupBy('user_id')->orderBy('id','ASC')->get();
+
+        //$infos = $infom->sortByDesc('created_at');
+        //$infos = sort($infom->id,'ASC');
         return view(('transactions.transactionChild'))->with('user_names', $who)->with('all', $infos);
     }
 
