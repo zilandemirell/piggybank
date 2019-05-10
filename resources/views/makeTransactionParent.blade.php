@@ -40,14 +40,16 @@
                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function (response) {
-                  if(response){
-                    console.log("başarılı", response);
+
+                  console.log(response);
+                  if(response=="true"){
+
                 alert ("Your Transaction saved succesfully");
                   }
-                  else{
-                    alert ("hata");
-                  }
-                }
+                 
+                else{
+                  alert("Transaction process failed");
+                }}
               })}
     );
   });

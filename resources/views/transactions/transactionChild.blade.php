@@ -11,6 +11,8 @@
 
 @section('content')
     <div id='Transactions'>
+        <h4>Transaction Records</h4>
+
         <div class="mainContainer row-fluid">
             <div id="MainTransTutucu" class="transactionTab span6">
 
