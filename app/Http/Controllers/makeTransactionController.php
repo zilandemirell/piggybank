@@ -24,6 +24,8 @@ class makeTransactionController extends Controller
     }
     public function getDummy()
     {
+
+
         //request url
         $url = 'https://my.api.mockaroo.com/smartpiggybank.json?key=e6adf7f0';
 
@@ -45,11 +47,12 @@ class makeTransactionController extends Controller
             //get body content
             $body = $response->getBody();
             $items = json_decode($body);
-           /* foreach ($items as $item) {
-                echo '<h3>  ' . $item->balance . '</h3>';
-            }*/
+            /* foreach ($items as $item) {
+                 echo '<h3>  ' . $item->balance . '</h3>';
+             }*/
+
         }
-        return $items;
+        return ($items);
     }
 
     public function record($dummy, $date, $hour, $user_id)
@@ -67,16 +70,23 @@ class makeTransactionController extends Controller
 
         $trans->save();
 
-
     }
 
     public function openDoor()
     {
+try {
+    $this->doorClosed();
+    //wait for the response from raspberry
+$status="true";
+}
 
-        $this->doorClosed();
+catch (\Exception $e){
+    $status="false";
 
-        return ["status" => true];
-        //wait for the response from raspberry
+}
+finally{
+    return $status;
+}
     }
 
     //local/raspsendingdata
@@ -88,7 +98,6 @@ class makeTransactionController extends Controller
 
         $jsonq = $this->getDummy();
         //this data created for simulation; originally this method called by raspberry and data will be sended from it.
-
         $mytime = Carbon::now();
         $input = $mytime->toDateTimeString();
         $format1 = 'Y-m-d';
