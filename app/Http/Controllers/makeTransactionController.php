@@ -24,18 +24,8 @@ class makeTransactionController extends Controller
     }
     public function getDummy()
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        try{
-=======
 
 
->>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
-=======
-
-
-
->>>>>>> 4489e93a339252d8c87393bc988661042c8afa33
         //request url
         $url = 'https://my.api.mockaroo.com/smartpiggybank.json?key=e6adf7f0';
 
@@ -44,6 +34,7 @@ class makeTransactionController extends Controller
 
         //send get request to fetch data
         $response = $client->request('GET', $url);
+
         //check response status ex: 200 is 'OK'
         if ($response->getStatusCode() == 200) {
             //header information contains detail information about the response.
@@ -61,36 +52,8 @@ class makeTransactionController extends Controller
              }*/
 
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        
-        $status=true;
-
-        throw new Exception();
-=======
         return ($items);
->>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
     }
-    catch(Exception $e)
-{
-    
-    $status=false; 
-}
-finally{
-    return ["status"=> $status,
-    "item" => $items
-];
-}
-=======
-
-
-        return ($items);
-
-  
->>>>>>> 4489e93a339252d8c87393bc988661042c8afa33
-
-
-}
 
     public function record($dummy, $date, $hour, $user_id)
     {
@@ -117,28 +80,6 @@ try {
 $status="true";
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        //wait(2000);
-        if($this->doorClosed()==true){
-            return ["status" => true];
-
-        }
-        else{
-            return ["status" => false];  
-        }
-        /*try {
-            $this->doorClosed();
-            throw new Exception();
-            return ["status" => true];
-        }
-        catch(Exception $e){
-            return ["status" => false];
-
-        }*/
-        
-        //wait for the response from raspberry
-=======
 catch (\Exception $e){
     $status="false";
 
@@ -146,18 +87,6 @@ catch (\Exception $e){
 finally{
     return $status;
 }
->>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
-=======
-
-catch (\Exception $e){
-    $status="false";
-
-}
-finally{
-    return $status;
-}
-
->>>>>>> 4489e93a339252d8c87393bc988661042c8afa33
     }
 
     //local/raspsendingdata
@@ -169,14 +98,6 @@ finally{
 
         $jsonq = $this->getDummy();
         //this data created for simulation; originally this method called by raspberry and data will be sended from it.
-<<<<<<< HEAD
-<<<<<<< HEAD
-        $status=$this->getDummy()['status'];
-=======
->>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
-=======
-
->>>>>>> 4489e93a339252d8c87393bc988661042c8afa33
         $mytime = Carbon::now();
         $input = $mytime->toDateTimeString();
         $format1 = 'Y-m-d';
@@ -189,7 +110,7 @@ finally{
        // $hour = Carbon::createFromFormat($format2, $input,'Europe/Istanbul');
         //$hour->setTimezone('UTC');
         $dummy = $this->record($jsonq, $date, $hour, $who);
-        
+
 
     }
 
