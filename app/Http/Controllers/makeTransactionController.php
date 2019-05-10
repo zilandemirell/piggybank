@@ -25,13 +25,19 @@ class makeTransactionController extends Controller
     public function getDummy()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         try{
 =======
 
 
 >>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
+=======
+
+
+
+>>>>>>> 4489e93a339252d8c87393bc988661042c8afa33
         //request url
-        $url = 'https://my.api.mockaroo.com/smartpiggybank.json?key=e6adf7f02';
+        $url = 'https://my.api.mockaroo.com/smartpiggybank.json?key=e6adf7f0';
 
         //create new instance of Client class
         $client = new Client(['header' => ['User-Agent' => 'MyRSSFeed']]);
@@ -56,6 +62,7 @@ class makeTransactionController extends Controller
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         $status=true;
 
@@ -74,6 +81,13 @@ finally{
     "item" => $items
 ];
 }
+=======
+
+
+        return ($items);
+
+  
+>>>>>>> 4489e93a339252d8c87393bc988661042c8afa33
 
 
 }
@@ -104,6 +118,7 @@ $status="true";
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         //wait(2000);
         if($this->doorClosed()==true){
             return ["status" => true];
@@ -132,6 +147,17 @@ finally{
     return $status;
 }
 >>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
+=======
+
+catch (\Exception $e){
+    $status="false";
+
+}
+finally{
+    return $status;
+}
+
+>>>>>>> 4489e93a339252d8c87393bc988661042c8afa33
     }
 
     //local/raspsendingdata
@@ -141,12 +167,16 @@ finally{
 
         $who = Auth::id();
 
-        $jsonq = $this->getDummy()['item'];
+        $jsonq = $this->getDummy();
         //this data created for simulation; originally this method called by raspberry and data will be sended from it.
+<<<<<<< HEAD
 <<<<<<< HEAD
         $status=$this->getDummy()['status'];
 =======
 >>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
+=======
+
+>>>>>>> 4489e93a339252d8c87393bc988661042c8afa33
         $mytime = Carbon::now();
         $input = $mytime->toDateTimeString();
         $format1 = 'Y-m-d';
@@ -159,7 +189,7 @@ finally{
        // $hour = Carbon::createFromFormat($format2, $input,'Europe/Istanbul');
         //$hour->setTimezone('UTC');
         $dummy = $this->record($jsonq, $date, $hour, $who);
-        return $status;
+        
 
     }
 

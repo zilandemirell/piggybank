@@ -41,18 +41,22 @@
                 },
                 success: function (response) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if(response){
                     console.log("başarılı", response);
 =======
                   console.log(response);
                   if(response=="true"){
 >>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
+=======
+
+                  console.log(response);
+                  if(response=="true"){
+
+>>>>>>> 4489e93a339252d8c87393bc988661042c8afa33
                 alert ("Your Transaction saved succesfully");
                   }
-                  else{
-                    alert ("hata");
-                  }
-                }
+                 
                 else{
                   alert("Transaction process failed");
                 }}
