@@ -20,7 +20,7 @@
     <div class="card border-0 shadow my-5">
       <div class="card-body p-5">
         <div style="height: 200px"></div>
-        <h1 class="font-weight-light">Click the button for a new transaction</h1>
+        <h1 class="font-weight-light"style="color:white;"> <b> Click the button for making a new transaction</b></h1>
         <a id='opendoor' href="#" class="btn btn-rounded btn-large btn-info">New Transaction</a>
 
       </div>
