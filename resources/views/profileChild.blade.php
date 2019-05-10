@@ -7,7 +7,7 @@
 <div class="well">
     <ul class="nav nav-tabs">
       <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
-      <li><a href="#profile" data-toggle="tab">Password</a></li>
+    
     </ul>
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane active in" id="home">
