@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class makeTransactionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('makeTransactionChild');
@@ -20,7 +24,12 @@ class makeTransactionController extends Controller
     }
     public function getDummy()
     {
+<<<<<<< HEAD
         try{
+=======
+
+
+>>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
         //request url
         $url = 'https://my.api.mockaroo.com/smartpiggybank.json?key=e6adf7f02';
 
@@ -41,14 +50,19 @@ class makeTransactionController extends Controller
             //get body content
             $body = $response->getBody();
             $items = json_decode($body);
-           /* foreach ($items as $item) {
-                echo '<h3>  ' . $item->balance . '</h3>';
-            }*/
+            /* foreach ($items as $item) {
+                 echo '<h3>  ' . $item->balance . '</h3>';
+             }*/
+
         }
+<<<<<<< HEAD
         
         $status=true;
 
         throw new Exception();
+=======
+        return ($items);
+>>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
     }
     catch(Exception $e)
 {
@@ -79,12 +93,17 @@ finally{
 
         $trans->save();
 
-
     }
 
     public function openDoor()
     {
+try {
+    $this->doorClosed();
+    //wait for the response from raspberry
+$status="true";
+}
 
+<<<<<<< HEAD
         //wait(2000);
         if($this->doorClosed()==true){
             return ["status" => true];
@@ -104,6 +123,15 @@ finally{
         }*/
         
         //wait for the response from raspberry
+=======
+catch (\Exception $e){
+    $status="false";
+
+}
+finally{
+    return $status;
+}
+>>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
     }
 
     //local/raspsendingdata
@@ -115,15 +143,21 @@ finally{
 
         $jsonq = $this->getDummy()['item'];
         //this data created for simulation; originally this method called by raspberry and data will be sended from it.
+<<<<<<< HEAD
         $status=$this->getDummy()['status'];
+=======
+>>>>>>> 2f9231f1e02b5fe641cd3d5ee2ad5c1d908a7aa6
         $mytime = Carbon::now();
         $input = $mytime->toDateTimeString();
         $format1 = 'Y-m-d';
         $format2 = 'H:i:s';
-        $date = Carbon::parse($input)->format($format1);
-        $hour = Carbon::parse($input)->format($format2);
-
-
+        $timey = Carbon::createFromFormat('Y-m-d H:i:s', $input, 'Europe/Istanbul');
+       // $timey->setTimezone('');
+        $date = Carbon::parse($timey)->format($format1);
+        $hour = Carbon::parse($timey)->format($format2);
+        //$hour->timezone('Europe/Istanbul');
+       // $hour = Carbon::createFromFormat($format2, $input,'Europe/Istanbul');
+        //$hour->setTimezone('UTC');
         $dummy = $this->record($jsonq, $date, $hour, $who);
         return $status;
 

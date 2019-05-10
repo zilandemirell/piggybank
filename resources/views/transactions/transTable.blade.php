@@ -29,7 +29,7 @@
                         @if (empty($all[$users->id]) )
                             No Transaction Found
                         @else
-                            @foreach($all[$users->id] as $transaction)
+                            @foreach($all[$users->id]->sortByDesc('id') as $transaction)
 
                                 <tbody>
                                 <tr>

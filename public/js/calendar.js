@@ -46,18 +46,16 @@ $(document).ready(function () {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function (data) {
-                    console.log("başarılı", value);
+                    console.log(value);
                     console.log(data);
                     console.log(page_url);
                     //console.log("response", response);
-                    if(data.success == true){
-                        $('#MainTransTutucu').empty().append(data.html);
-                    }
-                    else{
+                    if(data.success == false){
                         alert('No Transactions');
-                        console.log(data);
 
-                    }
+                    }console.log(data.success);
+                    $('#MainTransTutucu').empty().append(data.html);
+
                 },
                 error: function() {
                     alert('No Transactions');

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\transaction;
 use App\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TransactionsController extends Controller
@@ -14,6 +13,10 @@ class TransactionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
  public function storeValue(Request $request)
     {
@@ -21,12 +24,15 @@ class TransactionsController extends Controller
         //$this->index();
         //$datei = new Carbon($request->date,'Europe/London');
         $date_select = $request->date;
-        //$datei=Carbon::createFromFormat('Y/m/d',$request->date);
         $names = User::select('name', 'id')->get();
         $infos = transaction::all()->where("date", "=", $date_select)->groupBy('user_id');
 
 
         $returnHTML = view('transactions.transTable')->with('user_names', $names)->with('all', $infos)->render();
+        if(sizeof($infos)==0){
+            return response()->json(['success' => false, 'html' => $returnHTML ]);
+
+        }else
         return response()->json(['success' => true, 'html' => $returnHTML ]);
     }
 
@@ -36,7 +42,6 @@ class TransactionsController extends Controller
 
         $names = User::select('name', 'id')->get();
         $infos = transaction::all()->groupBy('user_id');
-
         return view(('transactions.index'))->with('user_names', $names)->with('all', $infos);
     }
 
