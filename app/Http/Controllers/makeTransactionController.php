@@ -20,15 +20,15 @@ class makeTransactionController extends Controller
     }
     public function getDummy()
     {
+        try{
         //request url
-        $url = 'https://my.api.mockaroo.com/smartpiggybank.json?key=e6adf7f0';
+        $url = 'https://my.api.mockaroo.com/smartpiggybank.json?key=e6adf7f02';
 
         //create new instance of Client class
         $client = new Client(['header' => ['User-Agent' => 'MyRSSFeed']]);
 
         //send get request to fetch data
         $response = $client->request('GET', $url);
-
         //check response status ex: 200 is 'OK'
         if ($response->getStatusCode() == 200) {
             //header information contains detail information about the response.
@@ -45,8 +45,24 @@ class makeTransactionController extends Controller
                 echo '<h3>  ' . $item->balance . '</h3>';
             }*/
         }
-        return $items;
+        
+        $status=true;
+
+        throw new Exception();
     }
+    catch(Exception $e)
+{
+    
+    $status=false; 
+}
+finally{
+    return ["status"=> $status,
+    "item" => $items
+];
+}
+
+
+}
 
     public function record($dummy, $date, $hour, $user_id)
     {
@@ -70,9 +86,23 @@ class makeTransactionController extends Controller
     {
 
         //wait(2000);
-        $this->doorClosed();
+        if($this->doorClosed()==true){
+            return ["status" => true];
 
-        return ["status" => true];
+        }
+        else{
+            return ["status" => false];  
+        }
+        /*try {
+            $this->doorClosed();
+            throw new Exception();
+            return ["status" => true];
+        }
+        catch(Exception $e){
+            return ["status" => false];
+
+        }*/
+        
         //wait for the response from raspberry
     }
 
@@ -83,9 +113,9 @@ class makeTransactionController extends Controller
 
         $who = Auth::id();
 
-        $jsonq = $this->getDummy();
+        $jsonq = $this->getDummy()['item'];
         //this data created for simulation; originally this method called by raspberry and data will be sended from it.
-
+        $status=$this->getDummy()['status'];
         $mytime = Carbon::now();
         $input = $mytime->toDateTimeString();
         $format1 = 'Y-m-d';
@@ -95,7 +125,7 @@ class makeTransactionController extends Controller
 
 
         $dummy = $this->record($jsonq, $date, $hour, $who);
-
+        return $status;
 
     }
 
