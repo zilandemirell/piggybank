@@ -22,10 +22,13 @@ class TransactionChildController extends Controller
         $infos = transaction::all()->where("date", "=", $date_select)->groupBy('user_id');
 
         $returnHTML = view('transactions.transTable')->with('user_names', $who)->with('all', $infos)->render();
+        if(array_key_exists($loggedUser,$infos)){
+            return response()->json(['success' => true, 'html' => $returnHTML ]);
 
-        return response()->json(['success' => true, 'html' => $returnHTML]);
+        }else
+            return response()->json(['success' => false, 'html' => $returnHTML ]);
+
     }
-
     /**
      * Display a listing of the resource.
      *

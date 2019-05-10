@@ -29,6 +29,10 @@ class TransactionsController extends Controller
 
 
         $returnHTML = view('transactions.transTable')->with('user_names', $names)->with('all', $infos)->render();
+        if(sizeof($infos)==0){
+            return response()->json(['success' => false, 'html' => $returnHTML ]);
+
+        }else
         return response()->json(['success' => true, 'html' => $returnHTML ]);
     }
 

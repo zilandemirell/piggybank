@@ -34,7 +34,12 @@ class FailedTransactionChildController extends Controller
         $infos = transaction::all()->where('isFailed','=','1')->where("date", "=", $date_select)->groupBy('user_id');
         $returnHTML = view('transactions.transTable')->with('user_names', $who)->with('all', $infos)->render();
 
-        return response()->json(['success' => true, 'html' => $returnHTML]);
+        if(array_key_exists($loggedUser,$infos)){
+            return response()->json(['success' => true, 'html' => $returnHTML ]);
+
+        }else
+            return response()->json(['success' => false, 'html' => $returnHTML ]);
+
     }
 
     
