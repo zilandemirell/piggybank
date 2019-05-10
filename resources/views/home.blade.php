@@ -66,25 +66,8 @@
         }
     }
 
-    .intro1 > #intro .btn-get-started {
-        font-size: 15px;
-        font-weight: bold;
-        letter-spacing: 1px;
-        display: inline-block;
-        padding: 10px 32px;
-        border-radius: 2px;
-        transition: 0.5s;
-        margin: 10px;
-        color: #fff;
-        background: #84c75b;
-    }
-
-    .intro1 > #intro .btn-get-started:hover {
-        color: #fff;
-        background: #57a825;
-        text-decoration: none;
- 
-    }
+   
+   
     .counter {
     background-color:#fff;
     padding: 20px 0;
@@ -115,14 +98,13 @@
     </style>
 
 @section('content')
-    <div class="intro1">
+    
         <section id="intro">
             <div class="intro-content">
                 <h2>Welcome to Smart Piggy Bank!</h2>
                 <h3>You can see your total balance in the counter and go to transaction details and failed transactions from the menu </h3>
             </div>
         </section>
-    </div>
     
     @foreach ($userBalance as $userName => $totalBalance)
 
@@ -136,6 +118,6 @@
                 
     
     @endforeach 
- 
+
    
 @endsection

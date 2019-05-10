@@ -40,10 +40,13 @@
                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function (response) {
+
                   console.log(response);
                   if(response=="true"){
+
                 alert ("Your Transaction saved succesfully");
-                }
+                  }
+                 
                 else{
                   alert("Transaction process failed");
                 }}
