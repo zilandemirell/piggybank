@@ -26,7 +26,6 @@ class makeTransactionController extends Controller
     {
 
 
-
         //request url
         $url = 'https://my.api.mockaroo.com/smartpiggybank.json?key=e6adf7f0';
 
@@ -35,6 +34,7 @@ class makeTransactionController extends Controller
 
         //send get request to fetch data
         $response = $client->request('GET', $url);
+
         //check response status ex: 200 is 'OK'
         if ($response->getStatusCode() == 200) {
             //header information contains detail information about the response.
@@ -52,14 +52,8 @@ class makeTransactionController extends Controller
              }*/
 
         }
-
-
         return ($items);
-
-  
-
-
-}
+    }
 
     public function record($dummy, $date, $hour, $user_id)
     {
@@ -86,7 +80,6 @@ try {
 $status="true";
 }
 
-
 catch (\Exception $e){
     $status="false";
 
@@ -94,7 +87,6 @@ catch (\Exception $e){
 finally{
     return $status;
 }
-
     }
 
     //local/raspsendingdata
@@ -106,7 +98,6 @@ finally{
 
         $jsonq = $this->getDummy();
         //this data created for simulation; originally this method called by raspberry and data will be sended from it.
-
         $mytime = Carbon::now();
         $input = $mytime->toDateTimeString();
         $format1 = 'Y-m-d';
@@ -119,7 +110,7 @@ finally{
        // $hour = Carbon::createFromFormat($format2, $input,'Europe/Istanbul');
         //$hour->setTimezone('UTC');
         $dummy = $this->record($jsonq, $date, $hour, $who);
-        
+
 
     }
 
