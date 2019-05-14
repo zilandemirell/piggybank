@@ -14,14 +14,17 @@ class makeTransactionController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function index()
     {
         return view('makeTransactionChild');
     }
 
-    public function indexParent(){
+    public function indexParent()
+    {
         return view('makeTransactionParent');
     }
+
     public function getDummy()
     {
 
@@ -74,19 +77,17 @@ class makeTransactionController extends Controller
 
     public function openDoor()
     {
-try {
-    $this->doorClosed();
-    //wait for the response from raspberry
-$status="true";
-}
+        $status = "";
+        try {
+            $this->doorClosed();
+            //wait for the response from raspberry
+            $status = "true";
+        } catch (\Exception $e) {
+            $status = "false";
 
-catch (\Exception $e){
-    $status="false";
-
-}
-finally{
-    return $status;
-}
+        } finally {
+            return $status;
+        }
     }
 
     //local/raspsendingdata
@@ -103,11 +104,11 @@ finally{
         $format1 = 'Y-m-d';
         $format2 = 'H:i:s';
         $timey = Carbon::createFromFormat('Y-m-d H:i:s', $input, 'Europe/Istanbul');
-       // $timey->setTimezone('');
+        // $timey->setTimezone('');
         $date = Carbon::parse($timey)->format($format1);
         $hour = Carbon::parse($timey)->format($format2);
         //$hour->timezone('Europe/Istanbul');
-       // $hour = Carbon::createFromFormat($format2, $input,'Europe/Istanbul');
+        // $hour = Carbon::createFromFormat($format2, $input,'Europe/Istanbul');
         //$hour->setTimezone('UTC');
         $dummy = $this->record($jsonq, $date, $hour, $who);
 
