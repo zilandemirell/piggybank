@@ -5,18 +5,21 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\ResetPassword;
 
 class User extends Authenticatable
 {
     use Notifiable;
-   
+
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+
     protected $fillable = [
-        'name', 'email', 'password', 'isParent'
+        'name', 'email', 'password', 'isParent','api_token'
     ];
     //public function setIsParentAttribute($value){
     //$this->attributes['isParent'] = ($value=='on')?($value=1):($value=0);
@@ -45,5 +48,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(transaction::class, 'user_id', 'id')->get();
     }
-
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
+    }
 }
