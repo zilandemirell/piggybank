@@ -77,7 +77,6 @@ class makeTransactionController extends Controller
 
     public function openDoor()
     {
-        $status = "";
         try {
             $this->doorClosed();
             //wait for the response from raspberry
@@ -103,7 +102,7 @@ class makeTransactionController extends Controller
         $input = $mytime->toDateTimeString();
         $format1 = 'Y-m-d';
         $format2 = 'H:i:s';
-        $timey = Carbon::createFromFormat('Y-m-d H:i:s', $input, 'Europe/Istanbul');
+        $timey = Carbon::createFromFormat('Y-m-d H:i:s', $input);
         // $timey->setTimezone('');
         $date = Carbon::parse($timey)->format($format1);
         $hour = Carbon::parse($timey)->format($format2);
