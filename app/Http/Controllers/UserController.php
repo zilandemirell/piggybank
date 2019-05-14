@@ -50,6 +50,7 @@ class UserController extends Controller
         $user->surname = $request->input('email');
         $user->password = $request->input('password');
         $user->isParent = $request->input('isParent');
+        $user->api_token = $request['api_token'];
         $user->save();
         return Redirect::to('login');
       }
