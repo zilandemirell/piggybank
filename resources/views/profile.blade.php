@@ -20,7 +20,8 @@
             <textarea rows="3" class="input-xlarge" readonly>
                 {{$loggedUser->isParent==true?"You have parent priority": "You don't have parent priority"}} 
             </textarea>
-        
+            <label> <b>Click here to open the gate and empty the vault</b> </label>
+            <a href="#" class="btn btn-rounded btn-large btn-info">Empty the Vault</a>
         </form>
       </div>
   </div>

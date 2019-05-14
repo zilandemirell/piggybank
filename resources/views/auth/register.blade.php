@@ -19,7 +19,7 @@
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong><br>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -33,7 +33,7 @@
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong><br>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -80,7 +80,7 @@
 
                                 @if ($errors->has('isParent'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('isParent') }}</strong>
+                                        <strong><br>{{ $errors->first('isParent') }}</strong>
                                     </span>
                                 @endif
                             </div>
